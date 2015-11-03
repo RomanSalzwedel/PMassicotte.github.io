@@ -1,8 +1,16 @@
 ---
-layout: minimal
-js: "/js/contact.js"
-css: "/css/contact.css"
-googlefonts: Lobster
+layout: page
+title: Contact information
 ---
 
-pmassicotte@hotmail.com
+### Philippe Massicotte
+
+#### Postdoctoral fellowship
+
+
+**Aarhus University**
+
+Department of Bioscience<br>
+Frederiksborgvej 399<br>
+DK-4000 Roskilde<br>
+Tlf. +45 871 58 472 #59003

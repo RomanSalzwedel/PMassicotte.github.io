@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Just another R blog</title>
-    <description>Because we need more R blog</description>
+    <title>Another R blog</title>
+    <description>Because we need more R blogs</description>
     <link>http://PMassicotte.github.io</link>
     <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -12,10 +12,12 @@
           
           This is my first post, how exciting!
 
+sdfsd
+
         </description>
-        <pubDate>Sun, 04 Jan 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-01-04-first-post</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-01-04-first-post</guid>
+        <pubDate>Tue, 03 Nov 2015 00:00:00 -0800</pubDate>
+        <link>http://PMassicotte.github.io/2015-11-03-a-draft-post</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-03-a-draft-post</guid>
       </item>
     
   </channel>
