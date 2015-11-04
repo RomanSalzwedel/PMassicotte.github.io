@@ -7,17 +7,14 @@
     <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>First post!</title>
+        <title>Introducing eemR</title>
         <description>
           
-          This is my first post, how exciting!
-
-sdfsd
-
+          EEM (excitation-emission fluorescence matrix) The eemR package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the eem_ prefix. Please note this is a very alpha version of the package for testing...
         </description>
         <pubDate>Tue, 03 Nov 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-11-03-a-draft-post</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-03-a-draft-post</guid>
+        <link>http://PMassicotte.github.io/2015-11-03-test2</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-03-test2</guid>
       </item>
     
   </channel>
