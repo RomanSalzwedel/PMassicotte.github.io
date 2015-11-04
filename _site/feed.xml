@@ -12,9 +12,9 @@
           
           EEM (excitation-emission fluorescence matrix) The eemR package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the eem_ prefix. Please note this is a very alpha version of the package for testing...
         </description>
-        <pubDate>Tue, 03 Nov 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-11-03-test2</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-03-test2</guid>
+        <pubDate>Wed, 04 Nov 2015 00:00:00 -0800</pubDate>
+        <link>http://PMassicotte.github.io/2015-11-04-eemr</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-04-eemr</guid>
       </item>
     
   </channel>
