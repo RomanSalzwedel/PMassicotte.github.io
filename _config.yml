@@ -28,7 +28,6 @@ avatar: "/img/avatar-icon.png"
 # List of links in the navigation bar
 navbar-links:
   Home: ""
-  Blogroll: "blogroll"
   About Me: "aboutme"
   Contact: "contact"
 
@@ -62,16 +61,6 @@ url-pretty: "http://pmassicotte.github.io/"  # eg. "deanattali.com/beautiful-jek
 # --- Misc --- #
 
 #Copy the below content and paste it in the _config.yml file in your blog's root folder. This is necessary for the plugin to function properly.
-
-# Blogroll
-# The below value is used as the heading for your blogroll sidebar.
-blogroll_name: Blogs I Read
-# If the below is set to true, the latest feed will be retrieved using Google Feeds API and displayed on your sidebar.
-# If you find setting this to true slows your blog too much, set it to false.
-blogroll_show_latest_post: true
-# If the below is set to true, jquery tinysort plugin will be used to sort your feeds in order of most recent update.
-# Again, set this to false if you find your blog is slown down too much.
-blogroll_enable_js_sort: true
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 disqus: "pmassicotte"
