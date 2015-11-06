@@ -66,7 +66,7 @@ url-pretty: "http://pmassicotte.github.io/"  # eg. "deanattali.com/beautiful-jek
 disqus: "pmassicotte"
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-69738368-1‏"
 
 # https://www.jenntesolin.com/blog/2015/10/28/fix-jekyll-pagination-upgrade-to-3/
 gems :
