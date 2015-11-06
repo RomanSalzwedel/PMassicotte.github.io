@@ -10,6 +10,12 @@ library(eemR)
 ls("package:eemR")
 ```
 
+The package can be installed using the following command.
+
+```{r install, eval = FALSE}
+devtools::install_github("PMassicotte/eemR")
+```
+
 ## Reading excitation-emission
 
 At the moment, to following EEM types are supported:
