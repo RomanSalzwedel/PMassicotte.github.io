@@ -22,7 +22,7 @@
 .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
 .kp { color: #008000 } /* Keyword.Pseudo */
 .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.kt { color: #008000 } /* Keyword.Type */
+.kt { color: #B00040 } /* Keyword.Type */
 .m { color: #666666 } /* Literal.Number */
 .s { color: #BA2121 } /* Literal.String */
 .na { color: #7D9029 } /* Name.Attribute */
@@ -59,4 +59,3 @@
 .vg { color: #19177C } /* Name.Variable.Global */
 .vi { color: #19177C } /* Name.Variable.Instance */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
->>>>>>> d37bd86c15b95ce39945e8c402b215fe82851595
