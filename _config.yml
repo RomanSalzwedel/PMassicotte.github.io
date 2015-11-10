@@ -79,11 +79,10 @@ timezone: "America/Vancouver"
 markdown: kramdown
 kramdown:
   auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
+  input: GFM
   toc_levels: 1..6
-  use_coderay: false
-  parse_block_html: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: true
 highlighter: pygments
 permalink: /:year-:month-:day-:title
 paginate: 5
