@@ -16,10 +16,12 @@
 }
  
 code {
-  font-family: 'Open Sans', monospace;
-  font-size: 18px;
-  color: #999;
-  font-weight: 500;
+  font-family: 'Open Sans';
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 13px;
 }
  
 // Solarized Light Pygments 
