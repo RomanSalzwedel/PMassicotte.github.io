@@ -44,6 +44,7 @@
 .highlight .mi { color: #6060f0; font-weight: bold } /* Literal.Number.Integer */
 .highlight .mo { color: #4000E0; font-weight: bold } /* Literal.Number.Oct */
 .highlight .sb { background-color: #e0e0ff } /* Literal.String.Backtick */
+.highlight .sb { color: #bbe090 } /* Literal.String.Backtick */
 .highlight .sc { color: #8080F0 } /* Literal.String.Char */
 .highlight .sd { color: #D04020 } /* Literal.String.Doc */
 .highlight .s2 { background-color: #e0e0ff } /* Literal.String.Double */
