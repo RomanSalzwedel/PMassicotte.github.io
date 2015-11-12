@@ -7,6 +7,17 @@
     <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Calculating daylight in R</title>
+        <description>
+          
+          A little bit more than a year ago I moved in Denmark. So far, the last year has been quite fun and I have been working on interesting projects. The most difficult part has been the winter since the daylight is very short between November and February. I was curious...
+        </description>
+        <pubDate>Fri, 06 Nov 2015 00:00:00 -0800</pubDate>
+        <link>http://PMassicotte.github.io/2015-11-06-daylight</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-06-daylight</guid>
+      </item>
+    
+      <item>
         <title>Introducing eemR</title>
         <description>
           
