@@ -23,7 +23,7 @@ doy <- 1:365
 mtl <- dl(doy = doy, latitude = 45.501689) ## Montreal latitude
 cph <- dl(doy = doy, latitude = 55.676097) ## Copenhagen latitude
 
-df <- data.frame(mtl = mtl, cph = cph, date = as.Date(doy - 1, origin = "2015-01-01"))
+df <- data.frame(mtl = mtl, cph = cph, date = as.Date(doy, origin = "2015-01-01"))
 
 ```
 
