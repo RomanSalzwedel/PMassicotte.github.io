@@ -5,7 +5,12 @@ tags:
   - R
 ---
 
-
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 ## Introduction
 
@@ -13,24 +18,16 @@ tags:
 
 The package can be installed using the following command:
 
-
-{% highlight r %}
+```{r, eval = FALSE}
 devtools::install_github("PMassicotte/gtrendsR")
-{% endhighlight %}
+```
 
 There are two main functions in the package: `gconnect()` to connect to Google using your credentials and `gtrends()` to perform actual queries.
 
-
-{% highlight r %}
+```{r}
 library(gtrendsR)
 ls("package:gtrendsR")
-{% endhighlight %}
-
-
-
-{% highlight text %}
-#> [1] "gconnect" "gtrends"
-{% endhighlight %}
+```
 
 # Examples
 
@@ -38,8 +35,7 @@ In this simple example, Googling trends for keywords `nhl`, `nba` and `nfl` are 
 
 ## Get the data
 
-
-{% highlight r %}
+```{r, eval = FALSE}
 library(gtrendsR)
 
 usr <- "user@gmail.com"
@@ -48,25 +44,22 @@ psw <- "password"
 ch <- gconnect(usr, psw)
 
 sport_trend <- gtrends(ch, c("nlh", "nba", "nfl")
-{% endhighlight %}
+```
 
 ## Plot the data
 
-
-{% highlight r %}
+```{r}
 data("sport_trend")
 
 plot(sport_trend)
-{% endhighlight %}
 
-<img src="/README-unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" />
+```
 
 It is also possible to plot geographical data using `googleVis` as follow.
 
-
-{% highlight r %}
+```{r, eval = FALSE}
 plot(sport_trend, type = "region")
 plot(sport_trend, type = "cities")
-{% endhighlight %}
+```
 
 Feel free to try it!
