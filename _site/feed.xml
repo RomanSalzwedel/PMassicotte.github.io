@@ -7,6 +7,17 @@
     <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>R 101</title>
+        <description>
+          
+          Sometimes when you open a data file (lets say a .csv), variables will be recognized as factor whereas it should be numeric. It is therefore tempting to simply convert the variable to numeric using as.numeric(). Big mistake! If you use directly as.numeric() on a variable of the type factor, R...
+        </description>
+        <pubDate>Fri, 13 Nov 2015 00:00:00 -0800</pubDate>
+        <link>http://PMassicotte.github.io/2015-11-13-r-101</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-13-r-101</guid>
+      </item>
+    
+      <item>
         <title>Calculating daylight in R</title>
         <description>
           
