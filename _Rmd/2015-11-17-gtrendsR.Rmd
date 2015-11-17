@@ -41,7 +41,7 @@ psw <- "password"
 
 ch <- gconnect(usr, psw)
 
-sport_trend <- gtrends(ch, c("nlh", "nba", "nfl")
+sport_trend <- gtrends(ch, c("nlh", "nba", "nfl"))
 ```
 
 ## Plot the data
