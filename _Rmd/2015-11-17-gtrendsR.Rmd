@@ -39,14 +39,15 @@ library(gtrendsR)
 usr <- "user@gmail.com"
 psw <- "password"
 
-ch <- gconnect(usr, psw)
+gconnect(usr, psw)
 
-sport_trend <- gtrends(ch, c("nlh", "nba", "nfl"))
+sport_trend <- gtrends(c("nhl", "nba", "nfl"))
 ```
 
 ## Plot the data
 
 ```{r}
+## Load sample data
 data("sport_trend")
 
 plot(sport_trend)
