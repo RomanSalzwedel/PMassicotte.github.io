@@ -6,18 +6,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Introducing gtrendsR</title>
+  <title>Blogroll</title>
 
   <meta name="author" content="Philippe Massicotte" />
 
+  
+  <meta name="description" content="List of interesting blogs I read">
   
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
 
   
-
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    
   
 
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
   
 
   
@@ -27,11 +45,11 @@
   
 
   <!-- Facebook OpenGraph tags -->
-  <meta property="og:title" content="Introducing gtrendsR" />
+  <meta property="og:title" content="Blogroll" />
   <meta property="og:type" content="website" />
 
   
-  <meta property="og:url" content="http://PMassicotte.github.io/2015-11-17-gtrendsr/" />
+  <meta property="og:url" content="http://PMassicotte.github.io/blogroll" />
   
 
   
@@ -99,108 +117,29 @@
 </nav>  
 
     <div role="main" class="container main-content">
-      <header class="header-post">
+      
+<header class="header-page">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div class="post-heading">
-        <h1>Introducing gtrendsR</h1>
-        
-        <span class="post-meta">Posted on November 17, 2015</span>
-      </div>
-     </div>
+	  <div class="page-heading">
+	    <h1>Blogroll</h1>
+	    
+	    <hr class="small">
+	    <span class="page-subheading">List of interesting blogs I read</span>
+	    
+	  </div>
+    </div>
   </div>
 </header>
 
-<article>
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-	  <h2 id="introduction">Introduction</h2>
-
-<p><code>gtrendsR</code> provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed.</p>
-
-<p>The package can be installed using the following command:</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r">devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;PMassicotte/gtrendsR&quot;</span><span class="p">)</span></code></pre></figure>
-
-<p>There are two main functions in the package: <code>gconnect()</code> to connect to Google using your credentials and <code>gtrends()</code> to perform actual queries.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>gtrendsR<span class="p">)</span>
-<span class="kp">ls</span><span class="p">(</span><span class="s">&quot;package:gtrendsR&quot;</span><span class="p">)</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] &quot;gconnect&quot;             &quot;getDefaultConnection&quot; &quot;gtrends&quot;</code></pre></figure>
-
-<h1 id="examples">Examples</h1>
-
-<p>In this simple example, Googling trends for keywords <code>nhl</code>, <code>nba</code> and <code>nfl</code> are retrieved.</p>
-
-<h2 id="get-the-data">Get the data</h2>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>gtrendsR<span class="p">)</span>
-
-usr <span class="o">&lt;-</span> <span class="s">&quot;user@gmail.com&quot;</span>
-psw <span class="o">&lt;-</span> <span class="s">&quot;password&quot;</span>
-
-gconnect<span class="p">(</span>usr<span class="p">,</span> psw<span class="p">)</span>
-
-sport_trend <span class="o">&lt;-</span> gtrends<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;nhl&quot;</span><span class="p">,</span> <span class="s">&quot;nba&quot;</span><span class="p">,</span> <span class="s">&quot;nfl&quot;</span><span class="p">))</span></code></pre></figure>
-
-<h2 id="plot-the-data">Plot the data</h2>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Load sample data</span>
-data<span class="p">(</span><span class="s">&quot;sport_trend&quot;</span><span class="p">)</span>
-
-plot<span class="p">(</span>sport_trend<span class="p">)</span></code></pre></figure>
-
-<p><img src="/assets/Rfig/2015-11-17-gtrendsR/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
-
-<p>It is also possible to plot geographical data using <code>googleVis</code> as follow.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;region&quot;</span><span class="p">)</span>
-plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;cities&quot;</span><span class="p">)</span></code></pre></figure>
-
-<p>Feel free to try it!</p>
-
-	</div>
-  </div>
-</article>
 
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <ul class="pager blog-pager">
-      
-      <li class="previous">
-        <a href="/2015-11-06-daylight" data-toggle="tooltip" data-placement="top" title="Calculating daylight in R">&larr; Previous Post</a>
-      </li>
-      
-      
-    </ul>
+    <p><a href="http://www.r-bloggers.com/"><img src="http://www.r-bloggers.com/wp-content/uploads/2014/08/R_02.png"></a></p>
+
+	
   </div>
 </div>
-
-
-<div class="row disqus-comments">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    
-<div class="comments">
-	<div id="disqus_thread"></div>
-	<script type="text/javascript">
-	    var disqus_shortname = 'pmassicotte';
-	    // ensure that pages with query string get the same discussion
-            var url_parts = window.location.href.split("?");
-            var disqus_url = url_parts[0];	    
-	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
-
-  </div>
-</div>
-
 
     </div>
 
@@ -294,6 +233,14 @@ plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class
 
     
 
+
+  
+	<script src="/js/jquery-1.11.2.min.js"></script>
+  
+	<script src="/js/bootstrap.min.js"></script>
+  
+	<script src="/js/main.js"></script>
+  
 
 
 
