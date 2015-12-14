@@ -7,6 +7,24 @@
     <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>gtrendsR 1.3.1</title>
+        <description>
+          gtrendsR 1.3.1 is now on CRAN - 
+          grtendsR 1.3.1 is now on CRAN fixing many bugs.
+
+
+Fixing issue #34 where connection verification was not done properly.
+Now able to use more latin character in query. For example: gtrends(&amp;quot;montréal&amp;quot;).
+Can now deal with data returned other than in English language.
+
+
+        </description>
+        <pubDate>Sun, 13 Dec 2015 00:00:00 -0800</pubDate>
+        <link>http://PMassicotte.github.io/2015-12-13-gtrendsr1-3-1</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2015-12-13-gtrendsr1-3-1</guid>
+      </item>
+    
+      <item>
         <title>Introducing gtrendsR</title>
         <description>
           
