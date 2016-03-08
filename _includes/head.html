@@ -13,8 +13,15 @@
 
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
+ <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
   {% if page.common-ext-css %}
     {% for css in page.common-ext-css %}
+      <link rel="stylesheet" href="{{ css }}" />
+    {% endfor %}
+  {% endif %}
+  {% if layout.common-ext-css %}
+    {% for css in layout.common-ext-css %}
       <link rel="stylesheet" href="{{ css }}" />
     {% endfor %}
   {% endif %}
@@ -24,15 +31,30 @@
       <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
     {% endfor %}
   {% endif %}
+  {% if layout.common-css %}
+    {% for css in layout.common-css %}
+      <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
+    {% endfor %}
+  {% endif %}
 
   {% if page.common-googlefonts %}
     {% for font in page.common-googlefonts %}
-	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
+    {% endfor %}
+  {% endif %}
+  {% if layout.common-googlefonts %}
+    {% for font in layout.common-googlefonts %}
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
     {% endfor %}
   {% endif %}
 
   {% if page.ext-css %}
     {% for css in page.ext-css %}
+      <link rel="stylesheet" href="{{ css }}" />
+    {% endfor %}
+  {% endif %}
+  {% if layout.ext-css %}
+    {% for css in layout.ext-css %}
       <link rel="stylesheet" href="{{ css }}" />
     {% endfor %}
   {% endif %}
@@ -42,10 +64,20 @@
       <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
     {% endfor %}
   {% endif %}
+  {% if layout.css %}
+    {% for css in layout.css %}
+      <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
+    {% endfor %}
+  {% endif %}
 
   {% if page.googlefonts %}
     {% for font in page.googlefonts %}
-	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
+    {% endfor %}
+  {% endif %}
+  {% if layout.googlefonts %}
+    {% for font in layout.googlefonts %}
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />
     {% endfor %}
   {% endif %}
 
@@ -66,13 +98,5 @@
   {% else %}
   <meta property="og:image" content="" />
   {% endif %}
-
-  <!-- IMPORTANT PLEASE READ THIS: Delete the below line if your blog already uses jQuery in some form. Otherwise a conflict might be created and your blog might not work properly. -->
-  <!-- Use the below line only if your blog doesn't already use jQuery. Please check your head.html and custom/head.html to be sure. -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <!-- Below lines are necessary for Google Feeds API to work properly. Add them to your head.html or custom/head.html files in the _includes directory of your Octopress blog's source folder -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">google.load("feeds", "1");</script>
-
 
 </head>
