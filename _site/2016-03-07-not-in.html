@@ -6,10 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Introducing gtrendsR</title>
+  <title>Quick tip</title>
 
   <meta name="author" content="Philippe Massicotte" />
 
+  
+  <meta name="description" content="How to remove elements that are not in a list">
   
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
@@ -27,11 +29,11 @@
   
 
   <!-- Facebook OpenGraph tags -->
-  <meta property="og:title" content="Introducing gtrendsR" />
+  <meta property="og:title" content="Quick tip" />
   <meta property="og:type" content="website" />
 
   
-  <meta property="og:url" content="http://PMassicotte.github.io/2015-11-17-gtrendsr/" />
+  <meta property="og:url" content="http://PMassicotte.github.io/2016-03-07-not-in/" />
   
 
   
@@ -103,9 +105,11 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-heading">
-        <h1>Introducing gtrendsR</h1>
+        <h1>Quick tip</h1>
         
-        <span class="post-meta">Posted on November 17, 2015</span>
+        <h2 class="post-subheading">How to remove elements that are not in a list</h2>
+        
+        <span class="post-meta">Posted on March 7, 2016</span>
       </div>
      </div>
   </div>
@@ -114,51 +118,20 @@
 <article>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-	  <h2 id="introduction">Introduction</h2>
+	  <p>It is easy to verify if elements are within a list using the <code>%in%</code> operator in R. For example:</p>
 
-<p><code>gtrendsR</code> provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed.</p>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">)</span> <span class="o">%in%</span> <span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span></code></pre></figure>
 
-<p>The package can be installed using the following command:</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] TRUE TRUE</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;PMassicotte/gtrendsR&quot;</span><span class="p">)</span></code></pre></figure>
+<p>However, I am often in a situation where I need to do the opposite. This can be easily achieved using the <code>Negate()</code> function.</p>
 
-<p>There are two main functions in the package: <code>gconnect()</code> to connect to Google using your credentials and <code>gtrends()</code> to perform actual queries.</p>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="sb">`%ni%`</span> <span class="o">&lt;-</span> <span class="kp">Negate</span><span class="p">(</span><span class="sb">`%in%`</span><span class="p">)</span>
+<span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">)</span> <span class="o">%ni%</span> <span class="kc">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>gtrendsR<span class="p">)</span>
-<span class="kp">ls</span><span class="p">(</span><span class="s">&quot;package:gtrendsR&quot;</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] FALSE FALSE</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] &quot;countries&quot;   &quot;gconnect&quot;    &quot;gtrends&quot;     &quot;sport_trend&quot;</code></pre></figure>
-
-<h1 id="examples">Examples</h1>
-
-<p>In this simple example, Googling trends for keywords <code>nhl</code>, <code>nba</code> and <code>nfl</code> are retrieved.</p>
-
-<h2 id="get-the-data">Get the data</h2>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>gtrendsR<span class="p">)</span>
-
-usr <span class="o">&lt;-</span> <span class="s">&quot;user@gmail.com&quot;</span>
-psw <span class="o">&lt;-</span> <span class="s">&quot;password&quot;</span>
-
-gconnect<span class="p">(</span>usr<span class="p">,</span> psw<span class="p">)</span>
-
-sport_trend <span class="o">&lt;-</span> gtrends<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;nhl&quot;</span><span class="p">,</span> <span class="s">&quot;nba&quot;</span><span class="p">,</span> <span class="s">&quot;nfl&quot;</span><span class="p">))</span></code></pre></figure>
-
-<h2 id="plot-the-data">Plot the data</h2>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Load sample data</span>
-data<span class="p">(</span><span class="s">&quot;sport_trend&quot;</span><span class="p">)</span>
-
-plot<span class="p">(</span>sport_trend<span class="p">)</span></code></pre></figure>
-
-<p><img src="/assets/Rfig/2015-11-17-gtrendsR/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
-
-<p>It is also possible to plot geographical data using <code>googleVis</code> as follow.</p>
-
-<figure class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;region&quot;</span><span class="p">)</span>
-plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;cities&quot;</span><span class="p">)</span></code></pre></figure>
-
-<p>Feel free to try it!</p>
+<p>Voilà!</p>
 
 	</div>
   </div>
@@ -169,13 +142,9 @@ plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class
     <ul class="pager blog-pager">
       
       <li class="previous">
-        <a href="/2015-11-13-r-101" data-toggle="tooltip" data-placement="top" title="R 101">&larr; Previous Post</a>
+        <a href="/2015-12-13-gtrendsr" data-toggle="tooltip" data-placement="top" title="gtrendsR 1.3.1">&larr; Previous Post</a>
       </li>
       
-      
-      <li class="next">
-        <a href="/2015-12-13-gtrendsr" data-toggle="tooltip" data-placement="top" title="gtrendsR 1.3.1">Next Post &rarr;</a>
-      </li>
       
     </ul>
   </div>

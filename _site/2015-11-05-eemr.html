@@ -119,13 +119,15 @@
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>eemR<span class="p">)</span>
 <span class="kp">ls</span><span class="p">(</span><span class="s">&quot;package:eemR&quot;</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt;  [1] &quot;absorbance&quot;              &quot;eem_biological_index&quot;   
-#&gt;  [3] &quot;eem_coble_peaks&quot;         &quot;eem_cut&quot;                
-#&gt;  [5] &quot;eem_export_matlab&quot;       &quot;eem_fluorescence_index&quot; 
-#&gt;  [7] &quot;eem_humification_index&quot;  &quot;eem_inner_filter_effect&quot;
-#&gt;  [9] &quot;eem_raman_normalisation&quot; &quot;eem_read&quot;               
-#&gt; [11] &quot;eem_remove_blank&quot;        &quot;eem_remove_scattering&quot;  
-#&gt; [13] &quot;eem_set_wavelengths&quot;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt;  [1] &quot;absorbance&quot;              &quot;eem_bind&quot;               
+#&gt;  [3] &quot;eem_biological_index&quot;    &quot;eem_coble_peaks&quot;        
+#&gt;  [5] &quot;eem_cut&quot;                 &quot;eem_export_matlab&quot;      
+#&gt;  [7] &quot;eem_extract&quot;             &quot;eem_fluorescence_index&quot; 
+#&gt;  [9] &quot;eem_humification_index&quot;  &quot;eem_inner_filter_effect&quot;
+#&gt; [11] &quot;eem_raman_normalisation&quot; &quot;eem_read&quot;               
+#&gt; [13] &quot;eem_remove_blank&quot;        &quot;eem_remove_scattering&quot;  
+#&gt; [15] &quot;eem_sample_names&quot;        &quot;eem_sample_names&lt;-&quot;     
+#&gt; [17] &quot;eem_set_wavelengths&quot;</code></pre></figure>
 
 <p>The package can be installed using the following command.</p>
 
@@ -267,7 +269,8 @@ plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
 
 res <span class="o">&lt;-</span> eem_inner_filter_effect<span class="p">(</span>res<span class="p">,</span> absorbance<span class="p">,</span> <span class="m">1</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Range of IFE correction factors: 0.6432503 0.9889723</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Range of IFE correction factors: 0.6433 0.989 
+#&gt; Range of total absorbance (Atotal) : 0.0096 0.3832</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
 
@@ -401,7 +404,7 @@ eem_export_matlab<span class="p">(</span>filename<span class="p">,</span> eem<sp
         <p class="copyright text-muted">
 		  Philippe Massicotte
 		  &nbsp;&bull;&nbsp;
-		  2015
+		  2016
 
 		  
 		  &nbsp;&bull;&nbsp;

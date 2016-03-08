@@ -78,6 +78,10 @@
 		  <a href="/contact">Contact</a>
 		</li>
 		
+        <li>
+		  <a href="/blogroll">Blogs I read</a>
+		</li>
+		
       </ul>
     </div>
 	
@@ -115,19 +119,19 @@
 <figure class="highlight"><pre><code class="language-r" data-lang="r">x <span class="o">&lt;-</span> <span class="kp">as.factor</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">5</span><span class="p">))</span>
 x</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] 0.295718980930155   -0.0662479743055102 -0.47653523753867  
-#&gt; [4] -0.400093376536698  -1.16502277883766  
-#&gt; 5 Levels: -1.16502277883766 -0.47653523753867 ... 0.295718980930155</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] -0.723717257674541   -0.200709360464071   0.53384875216587    
+#&gt; [4] 0.430599392178696    -0.00709390745980088
+#&gt; 5 Levels: -0.723717257674541 -0.200709360464071 ... 0.53384875216587</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Wrong way</span>
 <span class="kp">as.numeric</span><span class="p">(</span>x<span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] 5 4 2 3 1</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] 1 2 5 4 3</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Right way</span>
 <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">as.character</span><span class="p">(</span>x<span class="p">))</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1]  0.29571898 -0.06624797 -0.47653524 -0.40009338 -1.16502278</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] -0.723717258 -0.200709360  0.533848752  0.430599392 -0.007093907</code></pre></figure>
 
 <p>Another way to prevent numeric to be converted into factor would be to use <em>as.is = T</em> when opening the data file with <em>read.csv</em>.</p>
 
@@ -148,22 +152,22 @@ df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p
 
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th>  </th> <th> X1 </th> <th> X2 </th> <th> X3 </th> <th> X4 </th> <th> X5 </th> <th> X6 </th> <th> X7 </th> <th> X8 </th> <th> X9 </th> <th> X10 </th>  </tr>
-  <tr> <td align="right"> 1 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.31 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -0.73 </td> <td align="right"> 0.58 </td> <td align="right"> 0.02 </td> </tr>
-  <tr> <td align="right"> 2 </td> <td align="right"> -0.17 </td> <td align="right"> 0.00 </td> <td align="right"> 0.26 </td> <td align="right"> -0.54 </td> <td align="right"> -0.01 </td> <td align="right"> -0.30 </td> <td align="right"> 0.84 </td> <td align="right"> 0.56 </td> <td align="right"> 1.54 </td> <td align="right"> -0.32 </td> </tr>
-  <tr> <td align="right"> 3 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -1.30 </td> <td align="right"> 0.57 </td> <td align="right"> 0.00 </td> <td align="right"> 0.95 </td> <td align="right"> 1.00 </td> <td align="right"> 0.00 </td> <td align="right"> -1.38 </td> <td align="right"> -1.08 </td> </tr>
-  <tr> <td align="right"> 4 </td> <td align="right"> 0.00 </td> <td align="right"> 0.10 </td> <td align="right"> 0.90 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -0.41 </td> <td align="right"> 0.98 </td> <td align="right"> 1.38 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
-  <tr> <td align="right"> 5 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.70 </td> <td align="right"> 0.78 </td> <td align="right"> 0.05 </td> <td align="right"> 0.00 </td> <td align="right"> -1.41 </td> <td align="right"> 0.00 </td> </tr>
-  <tr> <td align="right"> 6 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -0.53 </td> <td align="right"> 0.38 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
-  <tr> <td align="right"> 7 </td> <td align="right"> 0.00 </td> <td align="right"> 1.80 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.92 </td> <td align="right"> 1.11 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
-  <tr> <td align="right"> 8 </td> <td align="right"> 0.26 </td> <td align="right"> 0.00 </td> <td align="right"> -1.66 </td> <td align="right"> 0.11 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -2.32 </td> <td align="right"> -0.36 </td> <td align="right"> -1.31 </td> </tr>
-  <tr> <td align="right"> 9 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.69 </td> <td align="right"> -1.09 </td> <td align="right"> 0.00 </td> <td align="right"> -1.63 </td> <td align="right"> 0.00 </td> <td align="right"> -0.75 </td> <td align="right"> -0.19 </td> <td align="right"> 0.00 </td> </tr>
-  <tr> <td align="right"> 10 </td> <td align="right"> 0.00 </td> <td align="right"> 0.68 </td> <td align="right"> 0.00 </td> <td align="right"> 1.90 </td> <td align="right"> -0.28 </td> <td align="right"> -0.46 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.42 </td> <td align="right"> -0.15 </td> </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> 0.00 </td> <td align="right"> -0.56 </td> <td align="right"> 1.38 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -1.57 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -0.70 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td align="right"> -0.24 </td> <td align="right"> -0.36 </td> <td align="right"> -1.74 </td> <td align="right"> -0.20 </td> <td align="right"> 0.71 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -1.62 </td> <td align="right"> -1.13 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> 3 </td> <td align="right"> 0.00 </td> <td align="right"> -1.28 </td> <td align="right"> -0.90 </td> <td align="right"> 0.13 </td> <td align="right"> 0.00 </td> <td align="right"> 1.42 </td> <td align="right"> 0.00 </td> <td align="right"> 2.32 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td align="right"> 0.00 </td> <td align="right"> 0.42 </td> <td align="right"> -0.12 </td> <td align="right"> 0.00 </td> <td align="right"> -0.15 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> 5 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -2.89 </td> <td align="right"> -0.79 </td> <td align="right"> 0.00 </td> <td align="right"> -0.29 </td> <td align="right"> -1.23 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> 6 </td> <td align="right"> 0.33 </td> <td align="right"> -0.63 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -1.13 </td> <td align="right"> 0.73 </td> </tr>
+  <tr> <td align="right"> 7 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -0.34 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> -1.02 </td> <td align="right"> 1.09 </td> <td align="right"> -0.55 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> 8 </td> <td align="right"> 0.00 </td> <td align="right"> 1.80 </td> <td align="right"> 0.85 </td> <td align="right"> 1.36 </td> <td align="right"> 0.00 </td> <td align="right"> 0.51 </td> <td align="right"> -1.10 </td> <td align="right"> -0.29 </td> <td align="right"> -0.12 </td> <td align="right"> 0.08 </td> </tr>
+  <tr> <td align="right"> 9 </td> <td align="right"> 0.29 </td> <td align="right"> 0.00 </td> <td align="right"> -0.72 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.89 </td> <td align="right"> 0.00 </td> <td align="right"> 0.53 </td> </tr>
+  <tr> <td align="right"> 10 </td> <td align="right"> -0.81 </td> <td align="right"> -0.32 </td> <td align="right"> -0.13 </td> <td align="right"> 0.00 </td> <td align="right"> -0.10 </td> <td align="right"> 0.38 </td> <td align="right"> 0.00 </td> <td align="right"> 0.26 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Replace the 0 with NA</span>
@@ -171,22 +175,22 @@ df<span class="p">[</span>df <span class="o">==</span> <span class="m">0</span><
 
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> NA.string <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th>  </th> <th> X1 </th> <th> X2 </th> <th> X3 </th> <th> X4 </th> <th> X5 </th> <th> X6 </th> <th> X7 </th> <th> X8 </th> <th> X9 </th> <th> X10 </th>  </tr>
-  <tr> <td align="right"> 1 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.31 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.73 </td> <td align="right"> 0.58 </td> <td align="right"> 0.02 </td> </tr>
-  <tr> <td align="right"> 2 </td> <td align="right"> -0.17 </td> <td align="right"> NA </td> <td align="right"> 0.26 </td> <td align="right"> -0.54 </td> <td align="right"> -0.01 </td> <td align="right"> -0.30 </td> <td align="right"> 0.84 </td> <td align="right"> 0.56 </td> <td align="right"> 1.54 </td> <td align="right"> -0.32 </td> </tr>
-  <tr> <td align="right"> 3 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.30 </td> <td align="right"> 0.57 </td> <td align="right"> NA </td> <td align="right"> 0.95 </td> <td align="right"> 1.00 </td> <td align="right"> NA </td> <td align="right"> -1.38 </td> <td align="right"> -1.08 </td> </tr>
-  <tr> <td align="right"> 4 </td> <td align="right"> NA </td> <td align="right"> 0.10 </td> <td align="right"> 0.90 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.41 </td> <td align="right"> 0.98 </td> <td align="right"> 1.38 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 5 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.70 </td> <td align="right"> 0.78 </td> <td align="right"> 0.05 </td> <td align="right"> NA </td> <td align="right"> -1.41 </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 6 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.53 </td> <td align="right"> 0.38 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 7 </td> <td align="right"> NA </td> <td align="right"> 1.80 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.92 </td> <td align="right"> 1.11 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 8 </td> <td align="right"> 0.26 </td> <td align="right"> NA </td> <td align="right"> -1.66 </td> <td align="right"> 0.11 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -2.32 </td> <td align="right"> -0.36 </td> <td align="right"> -1.31 </td> </tr>
-  <tr> <td align="right"> 9 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.69 </td> <td align="right"> -1.09 </td> <td align="right"> NA </td> <td align="right"> -1.63 </td> <td align="right"> NA </td> <td align="right"> -0.75 </td> <td align="right"> -0.19 </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 10 </td> <td align="right"> NA </td> <td align="right"> 0.68 </td> <td align="right"> NA </td> <td align="right"> 1.90 </td> <td align="right"> -0.28 </td> <td align="right"> -0.46 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.42 </td> <td align="right"> -0.15 </td> </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> NA </td> <td align="right"> -0.56 </td> <td align="right"> 1.38 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.57 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.70 </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 2 </td> <td align="right"> -0.24 </td> <td align="right"> -0.36 </td> <td align="right"> -1.74 </td> <td align="right"> -0.20 </td> <td align="right"> 0.71 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.62 </td> <td align="right"> -1.13 </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 3 </td> <td align="right"> NA </td> <td align="right"> -1.28 </td> <td align="right"> -0.90 </td> <td align="right"> 0.13 </td> <td align="right"> NA </td> <td align="right"> 1.42 </td> <td align="right"> NA </td> <td align="right"> 2.32 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 4 </td> <td align="right"> NA </td> <td align="right"> 0.42 </td> <td align="right"> -0.12 </td> <td align="right"> NA </td> <td align="right"> -0.15 </td> <td align="right"> NA </td> <td align="right"> 0.00 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 5 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -2.89 </td> <td align="right"> -0.79 </td> <td align="right"> NA </td> <td align="right"> -0.29 </td> <td align="right"> -1.23 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 6 </td> <td align="right"> 0.33 </td> <td align="right"> -0.63 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.13 </td> <td align="right"> 0.73 </td> </tr>
+  <tr> <td align="right"> 7 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.34 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.02 </td> <td align="right"> 1.09 </td> <td align="right"> -0.55 </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 8 </td> <td align="right"> NA </td> <td align="right"> 1.80 </td> <td align="right"> 0.85 </td> <td align="right"> 1.36 </td> <td align="right"> NA </td> <td align="right"> 0.51 </td> <td align="right"> -1.10 </td> <td align="right"> -0.29 </td> <td align="right"> -0.12 </td> <td align="right"> 0.08 </td> </tr>
+  <tr> <td align="right"> 9 </td> <td align="right"> 0.29 </td> <td align="right"> NA </td> <td align="right"> -0.72 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.89 </td> <td align="right"> NA </td> <td align="right"> 0.53 </td> </tr>
+  <tr> <td align="right"> 10 </td> <td align="right"> -0.81 </td> <td align="right"> -0.32 </td> <td align="right"> -0.13 </td> <td align="right"> NA </td> <td align="right"> -0.10 </td> <td align="right"> 0.38 </td> <td align="right"> NA </td> <td align="right"> 0.26 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
    </table>
 
 <h2 id="count-of-missing-values-per-column">Count % of missing values per column</h2>
@@ -202,22 +206,22 @@ df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p
 
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> NA.string <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th>  </th> <th> X1 </th> <th> X2 </th> <th> X3 </th> <th> X4 </th> <th> X5 </th> <th> X6 </th> <th> X7 </th> <th> X8 </th> <th> X9 </th> <th> X10 </th>  </tr>
-  <tr> <td align="right"> 1 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.35 </td> <td align="right"> 1.75 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.28 </td> </tr>
-  <tr> <td align="right"> 2 </td> <td align="right"> 0.41 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 2.66 </td> <td align="right"> NA </td> <td align="right"> -0.09 </td> <td align="right"> 0.56 </td> <td align="right"> -2.25 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 3 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.05 </td> <td align="right"> 0.10 </td> <td align="right"> 1.03 </td> <td align="right"> -0.67 </td> <td align="right"> NA </td> <td align="right"> 0.12 </td> </tr>
-  <tr> <td align="right"> 4 </td> <td align="right"> NA </td> <td align="right"> -1.40 </td> <td align="right"> NA </td> <td align="right"> -0.47 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 1.11 </td> <td align="right"> 0.40 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 5 </td> <td align="right"> 0.89 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.12 </td> <td align="right"> NA </td> <td align="right"> 1.85 </td> <td align="right"> 2.16 </td> <td align="right"> 0.83 </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 6 </td> <td align="right"> 0.15 </td> <td align="right"> -0.40 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.74 </td> <td align="right"> -0.47 </td> <td align="right"> 1.60 </td> <td align="right"> 0.42 </td> <td align="right"> NA </td> <td align="right"> -1.29 </td> </tr>
-  <tr> <td align="right"> 7 </td> <td align="right"> NA </td> <td align="right"> -0.71 </td> <td align="right"> 1.07 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.43 </td> <td align="right"> NA </td> <td align="right"> -0.73 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 8 </td> <td align="right"> 1.37 </td> <td align="right"> -0.98 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.42 </td> <td align="right"> -0.63 </td> <td align="right"> NA </td> </tr>
-  <tr> <td align="right"> 9 </td> <td align="right"> 1.88 </td> <td align="right"> -1.60 </td> <td align="right"> 0.62 </td> <td align="right"> 0.78 </td> <td align="right"> 0.52 </td> <td align="right"> -0.72 </td> <td align="right"> 0.45 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.69 </td> </tr>
-  <tr> <td align="right"> 10 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.42 </td> <td align="right"> 1.80 </td> <td align="right"> NA </td> <td align="right"> -1.86 </td> <td align="right"> -2.01 </td> <td align="right"> -0.94 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> NA </td> <td align="right"> 0.07 </td> <td align="right"> -0.07 </td> <td align="right"> NA </td> <td align="right"> 0.09 </td> <td align="right"> 1.01 </td> <td align="right"> -0.86 </td> <td align="right"> NA </td> <td align="right"> -1.02 </td> <td align="right"> 0.33 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td align="right"> NA </td> <td align="right"> 0.07 </td> <td align="right"> 1.69 </td> <td align="right"> 0.66 </td> <td align="right"> -0.38 </td> <td align="right"> NA </td> <td align="right"> 0.78 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 3 </td> <td align="right"> 0.83 </td> <td align="right"> -1.70 </td> <td align="right"> NA </td> <td align="right"> 0.23 </td> <td align="right"> -0.72 </td> <td align="right"> NA </td> <td align="right"> -0.29 </td> <td align="right"> NA </td> <td align="right"> -0.45 </td> <td align="right"> -0.30 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.12 </td> <td align="right"> NA </td> <td align="right"> -0.60 </td> <td align="right"> 0.98 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 5 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 1.77 </td> <td align="right"> -0.30 </td> <td align="right"> NA </td> <td align="right"> -0.33 </td> <td align="right"> NA </td> <td align="right"> -0.72 </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 6 </td> <td align="right"> -0.05 </td> <td align="right"> -1.00 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.35 </td> </tr>
+  <tr> <td align="right"> 7 </td> <td align="right"> 0.59 </td> <td align="right"> -0.49 </td> <td align="right"> -0.10 </td> <td align="right"> 1.20 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -1.97 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 8 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -2.08 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> -0.17 </td> <td align="right"> 0.14 </td> <td align="right"> 0.02 </td> <td align="right"> -0.03 </td> </tr>
+  <tr> <td align="right"> 9 </td> <td align="right"> 0.71 </td> <td align="right"> 0.76 </td> <td align="right"> NA </td> <td align="right"> -0.19 </td> <td align="right"> 1.59 </td> <td align="right"> NA </td> <td align="right"> -1.49 </td> <td align="right"> 0.30 </td> <td align="right"> NA </td> <td align="right"> NA </td> </tr>
+  <tr> <td align="right"> 10 </td> <td align="right"> NA </td> <td align="right"> 0.76 </td> <td align="right"> 0.93 </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> NA </td> <td align="right"> 0.51 </td> <td align="right"> 0.56 </td> <td align="right"> -0.22 </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Find % of missing values in each column with apply</span>
@@ -228,22 +232,22 @@ df2 <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="
 
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df2<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> variable </th> <th> missing </th>  </tr>
-  <tr> <td> X1 </td> <td align="right"> 50.00 </td> </tr>
-  <tr> <td> X2 </td> <td align="right"> 50.00 </td> </tr>
-  <tr> <td> X3 </td> <td align="right"> 70.00 </td> </tr>
-  <tr> <td> X4 </td> <td align="right"> 50.00 </td> </tr>
-  <tr> <td> X5 </td> <td align="right"> 50.00 </td> </tr>
-  <tr> <td> X6 </td> <td align="right"> 40.00 </td> </tr>
+  <tr> <td> X1 </td> <td align="right"> 60.00 </td> </tr>
+  <tr> <td> X2 </td> <td align="right"> 30.00 </td> </tr>
+  <tr> <td> X3 </td> <td align="right"> 50.00 </td> </tr>
+  <tr> <td> X4 </td> <td align="right"> 40.00 </td> </tr>
+  <tr> <td> X5 </td> <td align="right"> 40.00 </td> </tr>
+  <tr> <td> X6 </td> <td align="right"> 80.00 </td> </tr>
   <tr> <td> X7 </td> <td align="right"> 30.00 </td> </tr>
-  <tr> <td> X8 </td> <td align="right"> 20.00 </td> </tr>
-  <tr> <td> X9 </td> <td align="right"> 80.00 </td> </tr>
-  <tr> <td> X10 </td> <td align="right"> 60.00 </td> </tr>
+  <tr> <td> X8 </td> <td align="right"> 70.00 </td> </tr>
+  <tr> <td> X9 </td> <td align="right"> 50.00 </td> </tr>
+  <tr> <td> X10 </td> <td align="right"> 50.00 </td> </tr>
    </table>
 
 <h2 id="grouping-data-frame">Grouping data frame</h2>
@@ -259,136 +263,136 @@ df2 <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="
 
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df1<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> ID </th> <th> x </th>  </tr>
-  <tr> <td> P </td> <td align="right"> -0.15 </td> </tr>
-  <tr> <td> N </td> <td align="right"> 1.75 </td> </tr>
-  <tr> <td> D </td> <td align="right"> 1.68 </td> </tr>
-  <tr> <td> Q </td> <td align="right"> -0.16 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 0.29 </td> </tr>
-  <tr> <td> C </td> <td align="right"> 0.43 </td> </tr>
-  <tr> <td> T </td> <td align="right"> 0.25 </td> </tr>
-  <tr> <td> B </td> <td align="right"> 0.18 </td> </tr>
-  <tr> <td> I </td> <td align="right"> -0.71 </td> </tr>
-  <tr> <td> J </td> <td align="right"> 0.63 </td> </tr>
+  <tr> <td> O </td> <td align="right"> 0.28 </td> </tr>
+  <tr> <td> T </td> <td align="right"> -0.42 </td> </tr>
+  <tr> <td> N </td> <td align="right"> -0.91 </td> </tr>
+  <tr> <td> K </td> <td align="right"> -0.87 </td> </tr>
+  <tr> <td> B </td> <td align="right"> -0.07 </td> </tr>
+  <tr> <td> M </td> <td align="right"> 0.46 </td> </tr>
+  <tr> <td> S </td> <td align="right"> 0.51 </td> </tr>
+  <tr> <td> D </td> <td align="right"> -0.87 </td> </tr>
+  <tr> <td> G </td> <td align="right"> 0.97 </td> </tr>
+  <tr> <td> P </td> <td align="right"> -1.11 </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df2<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> ID </th> <th> y </th>  </tr>
-  <tr> <td> O </td> <td align="right"> -0.36 </td> </tr>
-  <tr> <td> C </td> <td align="right"> -0.03 </td> </tr>
-  <tr> <td> B </td> <td align="right"> 0.19 </td> </tr>
-  <tr> <td> E </td> <td align="right"> -0.22 </td> </tr>
-  <tr> <td> M </td> <td align="right"> -1.02 </td> </tr>
-  <tr> <td> T </td> <td align="right"> 0.50 </td> </tr>
-  <tr> <td> K </td> <td align="right"> 0.85 </td> </tr>
-  <tr> <td> P </td> <td align="right"> 1.03 </td> </tr>
-  <tr> <td> H </td> <td align="right"> 0.23 </td> </tr>
-  <tr> <td> N </td> <td align="right"> 1.75 </td> </tr>
+  <tr> <td> O </td> <td align="right"> -1.18 </td> </tr>
+  <tr> <td> Q </td> <td align="right"> -1.57 </td> </tr>
+  <tr> <td> P </td> <td align="right"> 0.24 </td> </tr>
+  <tr> <td> K </td> <td align="right"> -0.24 </td> </tr>
+  <tr> <td> S </td> <td align="right"> 0.64 </td> </tr>
+  <tr> <td> B </td> <td align="right"> 0.92 </td> </tr>
+  <tr> <td> H </td> <td align="right"> 1.15 </td> </tr>
+  <tr> <td> C </td> <td align="right"> -0.33 </td> </tr>
+  <tr> <td> L </td> <td align="right"> -0.77 </td> </tr>
+  <tr> <td> D </td> <td align="right"> -0.16 </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r">inner_join<span class="p">(</span>df1<span class="p">,</span> df2<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;ID&quot;</span><span class="p">)</span></code></pre></figure>
 
-<p>ID          x           y
-1  P -0.1517184  1.02908565
-2  N  1.7507195  1.75290986
-3  E  0.2915121 -0.22433169
-4  C  0.4334547 -0.03420775
-5  T  0.2491695  0.49585080
-6  B  0.1823970  0.18678933</p>
+<p>ID           x          y
+1  O  0.28340982 -1.1766296
+2  K -0.87011027 -0.2379754
+3  B -0.07343049  0.9184792
+4  S  0.50693560  0.6446623
+5  D -0.87199605 -0.1616989
+6  P -1.11326339  0.2381587</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r">df_exact_match <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>df1<span class="p">,</span>df2<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;ID&quot;</span><span class="p">)</span> <span class="c1">## Exact match</span>
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df_exact_match<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> NA.string <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> ID </th> <th> x </th> <th> y </th>  </tr>
-  <tr> <td> B </td> <td align="right"> 0.18 </td> <td align="right"> 0.19 </td> </tr>
-  <tr> <td> C </td> <td align="right"> 0.43 </td> <td align="right"> -0.03 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 0.29 </td> <td align="right"> -0.22 </td> </tr>
-  <tr> <td> N </td> <td align="right"> 1.75 </td> <td align="right"> 1.75 </td> </tr>
-  <tr> <td> P </td> <td align="right"> -0.15 </td> <td align="right"> 1.03 </td> </tr>
-  <tr> <td> T </td> <td align="right"> 0.25 </td> <td align="right"> 0.50 </td> </tr>
+  <tr> <td> B </td> <td align="right"> -0.07 </td> <td align="right"> 0.92 </td> </tr>
+  <tr> <td> D </td> <td align="right"> -0.87 </td> <td align="right"> -0.16 </td> </tr>
+  <tr> <td> K </td> <td align="right"> -0.87 </td> <td align="right"> -0.24 </td> </tr>
+  <tr> <td> O </td> <td align="right"> 0.28 </td> <td align="right"> -1.18 </td> </tr>
+  <tr> <td> P </td> <td align="right"> -1.11 </td> <td align="right"> 0.24 </td> </tr>
+  <tr> <td> S </td> <td align="right"> 0.51 </td> <td align="right"> 0.64 </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r">df_all_x <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>df1<span class="p">,</span>df2<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;ID&quot;</span><span class="p">,</span> all.x <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1">## Keep all x (discard y that are not matched)</span>
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df_all_x<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> NA.string <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> ID </th> <th> x </th> <th> y </th>  </tr>
-  <tr> <td> B </td> <td align="right"> 0.18 </td> <td align="right"> 0.19 </td> </tr>
-  <tr> <td> C </td> <td align="right"> 0.43 </td> <td align="right"> -0.03 </td> </tr>
-  <tr> <td> D </td> <td align="right"> 1.68 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> E </td> <td align="right"> 0.29 </td> <td align="right"> -0.22 </td> </tr>
-  <tr> <td> I </td> <td align="right"> -0.71 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> J </td> <td align="right"> 0.63 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> N </td> <td align="right"> 1.75 </td> <td align="right"> 1.75 </td> </tr>
-  <tr> <td> P </td> <td align="right"> -0.15 </td> <td align="right"> 1.03 </td> </tr>
-  <tr> <td> Q </td> <td align="right"> -0.16 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> T </td> <td align="right"> 0.25 </td> <td align="right"> 0.50 </td> </tr>
+  <tr> <td> B </td> <td align="right"> -0.07 </td> <td align="right"> 0.92 </td> </tr>
+  <tr> <td> D </td> <td align="right"> -0.87 </td> <td align="right"> -0.16 </td> </tr>
+  <tr> <td> G </td> <td align="right"> 0.97 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> K </td> <td align="right"> -0.87 </td> <td align="right"> -0.24 </td> </tr>
+  <tr> <td> M </td> <td align="right"> 0.46 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> N </td> <td align="right"> -0.91 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> O </td> <td align="right"> 0.28 </td> <td align="right"> -1.18 </td> </tr>
+  <tr> <td> P </td> <td align="right"> -1.11 </td> <td align="right"> 0.24 </td> </tr>
+  <tr> <td> S </td> <td align="right"> 0.51 </td> <td align="right"> 0.64 </td> </tr>
+  <tr> <td> T </td> <td align="right"> -0.42 </td> <td align="right"> NA </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r">df_all_y <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>df1<span class="p">,</span>df2<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;ID&quot;</span><span class="p">,</span> all.y <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1">## Keep all y (discard x that are not matched)</span>
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df_all_y<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> NA.string <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> ID </th> <th> x </th> <th> y </th>  </tr>
-  <tr> <td> B </td> <td align="right"> 0.18 </td> <td align="right"> 0.19 </td> </tr>
-  <tr> <td> C </td> <td align="right"> 0.43 </td> <td align="right"> -0.03 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 0.29 </td> <td align="right"> -0.22 </td> </tr>
-  <tr> <td> N </td> <td align="right"> 1.75 </td> <td align="right"> 1.75 </td> </tr>
-  <tr> <td> P </td> <td align="right"> -0.15 </td> <td align="right"> 1.03 </td> </tr>
-  <tr> <td> T </td> <td align="right"> 0.25 </td> <td align="right"> 0.50 </td> </tr>
-  <tr> <td> H </td> <td align="right"> NA </td> <td align="right"> 0.23 </td> </tr>
-  <tr> <td> K </td> <td align="right"> NA </td> <td align="right"> 0.85 </td> </tr>
-  <tr> <td> M </td> <td align="right"> NA </td> <td align="right"> -1.02 </td> </tr>
-  <tr> <td> O </td> <td align="right"> NA </td> <td align="right"> -0.36 </td> </tr>
+  <tr> <td> B </td> <td align="right"> -0.07 </td> <td align="right"> 0.92 </td> </tr>
+  <tr> <td> D </td> <td align="right"> -0.87 </td> <td align="right"> -0.16 </td> </tr>
+  <tr> <td> K </td> <td align="right"> -0.87 </td> <td align="right"> -0.24 </td> </tr>
+  <tr> <td> O </td> <td align="right"> 0.28 </td> <td align="right"> -1.18 </td> </tr>
+  <tr> <td> P </td> <td align="right"> -1.11 </td> <td align="right"> 0.24 </td> </tr>
+  <tr> <td> S </td> <td align="right"> 0.51 </td> <td align="right"> 0.64 </td> </tr>
+  <tr> <td> C </td> <td align="right"> NA </td> <td align="right"> -0.33 </td> </tr>
+  <tr> <td> H </td> <td align="right"> NA </td> <td align="right"> 1.15 </td> </tr>
+  <tr> <td> L </td> <td align="right"> NA </td> <td align="right"> -0.77 </td> </tr>
+  <tr> <td> Q </td> <td align="right"> NA </td> <td align="right"> -1.57 </td> </tr>
    </table>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r">df_all <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>df1<span class="p">,</span>df2<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;ID&quot;</span><span class="p">,</span> all <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1">## Keep everything</span>
 <span class="kp">print</span><span class="p">(</span>xtable<span class="p">(</span>df_all<span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> include.rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> NA.string <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span></code></pre></figure>
 
-<!-- html table generated in R 3.2.2 by xtable 1.8-0 package -->
+<!-- html table generated in R 3.2.3 by xtable 1.8-2 package -->
 
-<!-- Tue Nov 17 14:51:26 2015 -->
+<!-- Tue Mar  8 14:51:06 2016 -->
 
 <table border=1>
 <tr> <th> ID </th> <th> x </th> <th> y </th>  </tr>
-  <tr> <td> B </td> <td align="right"> 0.18 </td> <td align="right"> 0.19 </td> </tr>
-  <tr> <td> C </td> <td align="right"> 0.43 </td> <td align="right"> -0.03 </td> </tr>
-  <tr> <td> D </td> <td align="right"> 1.68 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> E </td> <td align="right"> 0.29 </td> <td align="right"> -0.22 </td> </tr>
-  <tr> <td> I </td> <td align="right"> -0.71 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> J </td> <td align="right"> 0.63 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> N </td> <td align="right"> 1.75 </td> <td align="right"> 1.75 </td> </tr>
-  <tr> <td> P </td> <td align="right"> -0.15 </td> <td align="right"> 1.03 </td> </tr>
-  <tr> <td> Q </td> <td align="right"> -0.16 </td> <td align="right"> NA </td> </tr>
-  <tr> <td> T </td> <td align="right"> 0.25 </td> <td align="right"> 0.50 </td> </tr>
-  <tr> <td> H </td> <td align="right"> NA </td> <td align="right"> 0.23 </td> </tr>
-  <tr> <td> K </td> <td align="right"> NA </td> <td align="right"> 0.85 </td> </tr>
-  <tr> <td> M </td> <td align="right"> NA </td> <td align="right"> -1.02 </td> </tr>
-  <tr> <td> O </td> <td align="right"> NA </td> <td align="right"> -0.36 </td> </tr>
+  <tr> <td> B </td> <td align="right"> -0.07 </td> <td align="right"> 0.92 </td> </tr>
+  <tr> <td> D </td> <td align="right"> -0.87 </td> <td align="right"> -0.16 </td> </tr>
+  <tr> <td> G </td> <td align="right"> 0.97 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> K </td> <td align="right"> -0.87 </td> <td align="right"> -0.24 </td> </tr>
+  <tr> <td> M </td> <td align="right"> 0.46 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> N </td> <td align="right"> -0.91 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> O </td> <td align="right"> 0.28 </td> <td align="right"> -1.18 </td> </tr>
+  <tr> <td> P </td> <td align="right"> -1.11 </td> <td align="right"> 0.24 </td> </tr>
+  <tr> <td> S </td> <td align="right"> 0.51 </td> <td align="right"> 0.64 </td> </tr>
+  <tr> <td> T </td> <td align="right"> -0.42 </td> <td align="right"> NA </td> </tr>
+  <tr> <td> C </td> <td align="right"> NA </td> <td align="right"> -0.33 </td> </tr>
+  <tr> <td> H </td> <td align="right"> NA </td> <td align="right"> 1.15 </td> </tr>
+  <tr> <td> L </td> <td align="right"> NA </td> <td align="right"> -0.77 </td> </tr>
+  <tr> <td> Q </td> <td align="right"> NA </td> <td align="right"> -1.57 </td> </tr>
    </table>
 
 	</div>
@@ -509,7 +513,7 @@ df2 <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="
         <p class="copyright text-muted">
 		  Philippe Massicotte
 		  &nbsp;&bull;&nbsp;
-		  2015
+		  2016
 
 		  
 		  &nbsp;&bull;&nbsp;
