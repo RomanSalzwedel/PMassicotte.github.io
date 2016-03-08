@@ -78,7 +78,7 @@ gems :
 
 # Output options (more information on Jekyll's site)
 timezone: "America/Vancouver"
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 highlighter: rouge
