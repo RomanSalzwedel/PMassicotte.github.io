@@ -14,16 +14,40 @@
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
 
+ <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+  
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    
   
 
   
-
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
   
 
   
-
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
   
 
+  
+  
+
+  
+  
+
+  
   
 
   <!-- Facebook OpenGraph tags -->
@@ -37,14 +61,6 @@
   
   <meta property="og:image" content="http://PMassicotte.github.io/img/avatar-icon.png" />
   
-
-  <!-- IMPORTANT PLEASE READ THIS: Delete the below line if your blog already uses jQuery in some form. Otherwise a conflict might be created and your blog might not work properly. -->
-  <!-- Use the below line only if your blog doesn't already use jQuery. Please check your head.html and custom/head.html to be sure. -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <!-- Below lines are necessary for Google Feeds API to work properly. Add them to your head.html or custom/head.html files in the _includes directory of your Octopress blog's source folder -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">google.load("feeds", "1");</script>
-
 
 </head>
 
@@ -120,14 +136,14 @@
 
 <p>The package can be installed using the following command:</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;PMassicotte/gtrendsR&quot;</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">devtools</span><span class="o">::</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"PMassicotte/gtrendsR"</span><span class="p">)</span></code></pre></figure>
 
 <p>There are two main functions in the package: <code>gconnect()</code> to connect to Google using your credentials and <code>gtrends()</code> to perform actual queries.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>gtrendsR<span class="p">)</span>
-<span class="kp">ls</span><span class="p">(</span><span class="s">&quot;package:gtrendsR&quot;</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">gtrendsR</span><span class="p">)</span>
+<span class="n">ls</span><span class="p">(</span><span class="s2">"package:gtrendsR"</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] &quot;countries&quot;   &quot;gconnect&quot;    &quot;gtrends&quot;     &quot;sport_trend&quot;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; [1] "countries"   "gconnect"    "gtrends"     "sport_trend"</code></pre></figure>
 
 <h1 id="examples">Examples</h1>
 
@@ -135,28 +151,28 @@
 
 <h2 id="get-the-data">Get the data</h2>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>gtrendsR<span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">gtrendsR</span><span class="p">)</span>
 
-usr <span class="o">&lt;-</span> <span class="s">&quot;user@gmail.com&quot;</span>
-psw <span class="o">&lt;-</span> <span class="s">&quot;password&quot;</span>
+<span class="n">usr</span> <span class="o">&lt;-</span> <span class="s2">"user@gmail.com"</span>
+<span class="n">psw</span> <span class="o">&lt;-</span> <span class="s2">"password"</span>
 
-gconnect<span class="p">(</span>usr<span class="p">,</span> psw<span class="p">)</span>
+<span class="n">gconnect</span><span class="p">(</span><span class="n">usr</span><span class="p">,</span> <span class="n">psw</span><span class="p">)</span>
 
-sport_trend <span class="o">&lt;-</span> gtrends<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;nhl&quot;</span><span class="p">,</span> <span class="s">&quot;nba&quot;</span><span class="p">,</span> <span class="s">&quot;nfl&quot;</span><span class="p">))</span></code></pre></figure>
+<span class="n">sport_trend</span> <span class="o">&lt;-</span> <span class="n">gtrends</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"nhl"</span><span class="p">,</span> <span class="s2">"nba"</span><span class="p">,</span> <span class="s2">"nfl"</span><span class="p">))</span></code></pre></figure>
 
 <h2 id="plot-the-data">Plot the data</h2>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Load sample data</span>
-data<span class="p">(</span><span class="s">&quot;sport_trend&quot;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## Load sample data
+</span><span class="n">data</span><span class="p">(</span><span class="s2">"sport_trend"</span><span class="p">)</span>
 
-plot<span class="p">(</span>sport_trend<span class="p">)</span></code></pre></figure>
+<span class="n">plot</span><span class="p">(</span><span class="n">sport_trend</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-17-gtrendsR/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
 
 <p>It is also possible to plot geographical data using <code>googleVis</code> as follow.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;region&quot;</span><span class="p">)</span>
-plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;cities&quot;</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">sport_trend</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">"region"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">sport_trend</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">"cities"</span><span class="p">)</span></code></pre></figure>
 
 <p>Feel free to try it!</p>
 
@@ -296,11 +312,38 @@ plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class
 </footer>
 
 
+    <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
     
-
-
-
-
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
 
 
 
@@ -315,6 +358,7 @@ plot<span class="p">(</span>sport_trend<span class="p">,</span> type <span class
 		ga('send', 'pageview');
 	</script>
 	<!-- End Google Analytics -->
+
     
 
   </body>

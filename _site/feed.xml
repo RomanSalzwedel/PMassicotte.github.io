@@ -7,10 +7,21 @@
     <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>eemR 0.1.3 is now on CRAN</title>
+        <description>
+          With Shiny visualization! - 
+          eemR has been updated to v0.1.3 and brings a lot of new features. Among the most interesting ones: Shiny support: You can interactively visualize EEMS by using interactive = TRUE. Ex.: plot(X, interactive = TRUE). A vignette has been added. eem_remove_blank() and eem_raman_normalisation() can now try to implicitly use a...
+        </description>
+        <pubDate>Mon, 02 May 2016 00:00:00 -0700</pubDate>
+        <link>http://PMassicotte.github.io/2016-05-02-eemr-0-1-3</link>
+        <guid isPermaLink="true">http://PMassicotte.github.io/2016-05-02-eemr-0-1-3</guid>
+      </item>
+    
+      <item>
         <title>Quick tip</title>
         <description>
           How to remove elements that are not in a list - 
-          It is easy to verify if elements are within a list using the %in% operator in R. For example: c(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;) %in% letters[1:5] #&amp;gt; [1] TRUE TRUE However, I am often in a situation where I need to do the opposite. This can be easily achieved using the Negate() function....
+          It is easy to verify if elements are within a list using the %in% operator in R. For example: c(&quot;a&quot;, &quot;b&quot;) %in% letters[1:5] #&amp;gt; [1] TRUE TRUE However, I am often in a situation where I need to do the opposite. This can be easily achieved using the Negate() function....
         </description>
         <pubDate>Mon, 07 Mar 2016 00:00:00 -0800</pubDate>
         <link>http://PMassicotte.github.io/2016-03-07-not-in</link>
@@ -24,9 +35,9 @@
           grtendsR 1.3.1 is now on CRAN fixing many bugs.
 
 
-Fixing issue #34 where connection verification was not done properly.
-Now able to use more latin character in query. For example: gtrends(&amp;quot;montréal&amp;quot;).
-Can now deal with data returned other than in English language.
+  Fixing issue #34 where connection verification was not done properly.
+  Now able to use more latin character in query. For example: gtrends(&quot;montréal&quot;).
+  Can now deal with data returned other than in English language.
 
 
         </description>
@@ -39,7 +50,7 @@ Can now deal with data returned other than in English language.
         <title>Introducing gtrendsR</title>
         <description>
           
-          Introduction gtrendsR provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed. The package can be installed using the following command: devtools::install_github(&amp;quot;PMassicotte/gtrendsR&amp;quot;) There are two main functions in...
+          Introduction gtrendsR provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed. The package can be installed using the following command: devtools::install_github(&quot;PMassicotte/gtrendsR&quot;) There are two main functions in...
         </description>
         <pubDate>Tue, 17 Nov 2015 00:00:00 -0800</pubDate>
         <link>http://PMassicotte.github.io/2015-11-17-gtrendsr</link>
@@ -72,7 +83,7 @@ Can now deal with data returned other than in English language.
         <title>Introducing eemR</title>
         <description>
           
-          The eemR package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the eem_ prefix. Please note this is a very alpha version of the package for testing purpose only. library(eemR) ls(&amp;quot;package:eemR&amp;quot;)...
+          The eemR package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the eem_ prefix. Please note this is a very alpha version of the package for testing purpose only. library(eemR) ls(&quot;package:eemR&quot;)...
         </description>
         <pubDate>Thu, 05 Nov 2015 00:00:00 -0800</pubDate>
         <link>http://PMassicotte.github.io/2015-11-05-eemr</link>

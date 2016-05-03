@@ -16,10 +16,13 @@
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
 
+ <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
   
     
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     
+  
   
 
   
@@ -29,19 +32,24 @@
       <link rel="stylesheet" href="/css/main.css" />
     
   
+  
 
   
     
-	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
     
-	  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
     
   
-
   
 
   
+  
 
+  
+  
+
+  
   
 
   <!-- Facebook OpenGraph tags -->
@@ -55,14 +63,6 @@
   
   <meta property="og:image" content="http://PMassicotte.github.io/img/avatar-icon.png" />
   
-
-  <!-- IMPORTANT PLEASE READ THIS: Delete the below line if your blog already uses jQuery in some form. Otherwise a conflict might be created and your blog might not work properly. -->
-  <!-- Use the below line only if your blog doesn't already use jQuery. Please check your head.html and custom/head.html to be sure. -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <!-- Below lines are necessary for Google Feeds API to work properly. Add them to your head.html or custom/head.html files in the _includes directory of your Octopress blog's source folder -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">google.load("feeds", "1");</script>
-
 
 </head>
 
@@ -138,6 +138,28 @@
     <div class="posts-list">
   
   <article class="post-preview">
+    <a href="/2016-05-02-eemr-0-1-3">
+	  <h2 class="post-title">eemR 0.1.3 is now on CRAN</h2>
+
+	  
+	  <h3 class="post-subtitle">
+	    With Shiny visualization!
+	  </h3>
+	  
+    </a>
+
+    <p class="post-meta">
+      Posted on May 2, 2016
+    </p>
+
+    <div class="post-entry">
+      eemR has been updated to v0.1.3 and brings a lot of new features. Among the most interesting ones:   Shiny support: You can interactively visualize EEMS by using interactive = TRUE. Ex.: plot(X, interactive = TRUE).   A vignette has been added.    eem_remove_blank()...
+	  <a href="/2016-05-02-eemr-0-1-3" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+
+   </article>
+  
+  <article class="post-preview">
     <a href="/2016-03-07-not-in">
 	  <h2 class="post-title">Quick tip</h2>
 
@@ -153,7 +175,7 @@
     </p>
 
     <div class="post-entry">
-      It is easy to verify if elements are within a list using the %in% operator in R. For example: c(&quot;a&quot;, &quot;b&quot;) %in% letters[1:5] #&gt; [1] TRUE TRUE However, I am often...
+      It is easy to verify if elements are within a list using the %in% operator in R. For example: c("a", "b") %in% letters[1:5] #&gt; [1] TRUE TRUE However, I...
 	  <a href="/2016-03-07-not-in" class="post-read-more">[Read&nbsp;More]</a>
     </div>
 
@@ -178,9 +200,9 @@
       grtendsR 1.3.1 is now on CRAN fixing many bugs.
 
 
-Fixing issue #34 where connection verification was not done properly.
-Now able to use more latin character in query. For example: gtrends(&quot;montréal&quot;).
-Can now deal with data returned other than in English language.
+  Fixing issue #34 where connection verification was not done properly.
+  Now able to use more latin character in query. For example: gtrends("montréal").
+  Can now deal with data returned other than in English language.
 
 
 	  <a href="/2015-12-13-gtrendsr" class="post-read-more">[Read&nbsp;More]</a>
@@ -200,7 +222,7 @@ Can now deal with data returned other than in English language.
     </p>
 
     <div class="post-entry">
-      Introduction gtrendsR provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed. The package can be installed using the following command: devtools::install_github(<span...
+      Introduction gtrendsR provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed. The package can be installed using the following command: devtools::<span...
 	  <a href="/2015-11-17-gtrendsr" class="post-read-more">[Read&nbsp;More]</a>
     </div>
 
@@ -220,24 +242,6 @@ Can now deal with data returned other than in English language.
     <div class="post-entry">
       Sometimes when you open a data file (lets say a .csv), variables will be recognized as factor whereas it should be numeric. It is therefore tempting to simply convert the variable to numeric using as.numeric(). Big mistake! If you use directly as.numeric() on a variable of the type factor, R...
 	  <a href="/2015-11-13-r-101" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-
-   </article>
-  
-  <article class="post-preview">
-    <a href="/2015-11-06-daylight">
-	  <h2 class="post-title">Calculating daylight in R</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on November 6, 2015
-    </p>
-
-    <div class="post-entry">
-      A little bit more than a year ago I moved in Denmark. So far, the last year has been quite fun and I have been working on interesting projects. The most difficult part has been the winter since the daylight is very short between November and February. I was curious...
-	  <a href="/2015-11-06-daylight" class="post-read-more">[Read&nbsp;More]</a>
     </div>
 
    </article>
@@ -349,20 +353,39 @@ Can now deal with data returned other than in English language.
 </footer>
 
 
+    <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
     
-
-
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
   
-	<script src="/js/jquery-1.11.2.min.js"></script>
-  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
 	<script src="/js/bootstrap.min.js"></script>
+    
   
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
 	<script src="/js/main.js"></script>
+    
   
-
-
-
-
 
 
 
@@ -376,6 +399,7 @@ Can now deal with data returned other than in English language.
 		ga('send', 'pageview');
 	</script>
 	<!-- End Google Analytics -->
+
     
 
   </body>

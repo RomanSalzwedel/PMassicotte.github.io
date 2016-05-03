@@ -14,16 +14,40 @@
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
 
+ <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+  
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    
   
 
   
-
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
   
 
   
-
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
   
 
+  
+  
+
+  
+  
+
+  
   
 
   <!-- Facebook OpenGraph tags -->
@@ -37,14 +61,6 @@
   
   <meta property="og:image" content="http://PMassicotte.github.io/img/avatar-icon.png" />
   
-
-  <!-- IMPORTANT PLEASE READ THIS: Delete the below line if your blog already uses jQuery in some form. Otherwise a conflict might be created and your blog might not work properly. -->
-  <!-- Use the below line only if your blog doesn't already use jQuery. Please check your head.html and custom/head.html to be sure. -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <!-- Below lines are necessary for Google Feeds API to work properly. Add them to your head.html or custom/head.html files in the _includes directory of your Octopress blog's source folder -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">google.load("feeds", "1");</script>
-
 
 </head>
 
@@ -116,44 +132,44 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	  <p>A little bit more than a year ago I moved in Denmark. So far, the last year has been quite fun and I have been working on interesting projects. The most difficult part has been the winter since the daylight is very short between November and February. I was curious to see what was the difference in daylight between my home country (Canada) and Denmark. This is a short post showing how to calculate daylight based on the latitude position and the day of the year (DOY). The formula used can be found <a href="http://stackoverflow.com/questions/6372802/calculate-daylight-hours-based-on-gegraphical-coordinates">here</a>.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">dl <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>doy<span class="p">,</span> latitude<span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">dl</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">doy</span><span class="p">,</span> <span class="n">latitude</span><span class="p">)</span> <span class="p">{</span>
 
-  p <span class="o">&lt;-</span> <span class="kp">asin</span><span class="p">(</span><span class="m">0.39795</span> <span class="o">*</span> <span class="kp">cos</span><span class="p">(</span><span class="m">0.2163108</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="kp">atan</span><span class="p">(</span><span class="m">0.9671396</span> <span class="o">*</span> <span class="kp">tan</span><span class="p">(</span><span class="m">0.00860</span> <span class="o">*</span> <span class="p">(</span>doy <span class="o">-</span> <span class="m">186</span><span class="p">)))))</span>
+  <span class="n">p</span> <span class="o">&lt;-</span> <span class="n">asin</span><span class="p">(</span><span class="m">0.39795</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="m">0.2163108</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="n">atan</span><span class="p">(</span><span class="m">0.9671396</span> <span class="o">*</span> <span class="n">tan</span><span class="p">(</span><span class="m">0.00860</span> <span class="o">*</span> <span class="p">(</span><span class="n">doy</span> <span class="o">-</span> <span class="m">186</span><span class="p">)))))</span>
 
-  d <span class="o">&lt;-</span> <span class="m">24</span> <span class="o">-</span> <span class="p">(</span><span class="m">24</span> <span class="o">/</span> <span class="kc">pi</span><span class="p">)</span> <span class="o">*</span> <span class="kp">acos</span><span class="p">((</span><span class="kp">sin</span><span class="p">(</span><span class="m">0.8333</span> <span class="o">*</span> <span class="kc">pi</span> <span class="o">/</span> <span class="m">180</span><span class="p">)</span> <span class="o">+</span> <span class="kp">sin</span><span class="p">(</span>latitude <span class="o">*</span> <span class="kc">pi</span> <span class="o">/</span> <span class="m">180</span><span class="p">)</span> <span class="o">*</span> <span class="kp">sin</span><span class="p">(</span>p<span class="p">))</span> <span class="o">/</span> 
-    <span class="kp">cos</span><span class="p">(</span>latitude <span class="o">*</span> <span class="kc">pi</span> <span class="o">/</span> <span class="m">180</span><span class="p">)</span> <span class="o">*</span> <span class="kp">cos</span><span class="p">(</span>p<span class="p">))</span>
+  <span class="n">d</span> <span class="o">&lt;-</span> <span class="m">24</span> <span class="o">-</span> <span class="p">(</span><span class="m">24</span> <span class="o">/</span> <span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">acos</span><span class="p">((</span><span class="n">sin</span><span class="p">(</span><span class="m">0.8333</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="m">180</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">latitude</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="m">180</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">/</span> 
+    <span class="n">cos</span><span class="p">(</span><span class="n">latitude</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="m">180</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 
-  <span class="kr">return</span><span class="p">(</span>d<span class="p">)</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="p">}</span>
 
-doy <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">365</span>
+<span class="n">doy</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">365</span>
 
-mtl <span class="o">&lt;-</span> dl<span class="p">(</span>doy <span class="o">=</span> doy<span class="p">,</span> latitude <span class="o">=</span> <span class="m">45.501689</span><span class="p">)</span> <span class="c1">## Montreal latitude</span>
-cph <span class="o">&lt;-</span> dl<span class="p">(</span>doy <span class="o">=</span> doy<span class="p">,</span> latitude <span class="o">=</span> <span class="m">55.676097</span><span class="p">)</span> <span class="c1">## Copenhagen latitude</span>
+<span class="n">mtl</span> <span class="o">&lt;-</span> <span class="n">dl</span><span class="p">(</span><span class="n">doy</span> <span class="o">=</span> <span class="n">doy</span><span class="p">,</span> <span class="n">latitude</span> <span class="o">=</span> <span class="m">45.501689</span><span class="p">)</span> <span class="c1">## Montreal latitude
+</span><span class="n">cph</span> <span class="o">&lt;-</span> <span class="n">dl</span><span class="p">(</span><span class="n">doy</span> <span class="o">=</span> <span class="n">doy</span><span class="p">,</span> <span class="n">latitude</span> <span class="o">=</span> <span class="m">55.676097</span><span class="p">)</span> <span class="c1">## Copenhagen latitude
+</span>
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">mtl</span> <span class="o">=</span> <span class="n">mtl</span><span class="p">,</span> <span class="n">cph</span> <span class="o">=</span> <span class="n">cph</span><span class="p">,</span> <span class="n">date</span> <span class="o">=</span> <span class="n">as.Date</span><span class="p">(</span><span class="n">doy</span><span class="p">,</span> <span class="n">origin</span> <span class="o">=</span> <span class="s2">"2015-01-01"</span><span class="p">))</span></code></pre></figure>
 
-df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>mtl <span class="o">=</span> mtl<span class="p">,</span> cph <span class="o">=</span> cph<span class="p">,</span> date <span class="o">=</span> <span class="kp">as.Date</span><span class="p">(</span>doy<span class="p">,</span> origin <span class="o">=</span> <span class="s">&quot;2015-01-01&quot;</span><span class="p">))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-
-ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> <span class="kp">date</span><span class="p">))</span> <span class="o">+</span>
-  geom_line<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> mtl<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Montreal&quot;</span><span class="p">))</span> <span class="o">+</span>
-  geom_line<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> cph<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Copenhagen&quot;</span><span class="p">))</span> <span class="o">+</span>
-  labs<span class="p">(</span>color <span class="o">=</span> <span class="s">&quot;City&quot;</span><span class="p">)</span> <span class="o">+</span>
-  theme_bw<span class="p">()</span> <span class="o">+</span>
-  xlab<span class="p">(</span><span class="s">&quot;Months&quot;</span><span class="p">)</span> <span class="o">+</span>
-  ylab<span class="p">(</span><span class="s">&quot;Daylight (hours)&quot;</span><span class="p">)</span> <span class="o">+</span>
-  geom_vline<span class="p">(</span>xintercept <span class="o">=</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">Sys.Date</span><span class="p">()),</span> lty <span class="o">=</span> <span class="m">2</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span></code></pre></figure>
+<span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">date</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">mtl</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"Montreal"</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">cph</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"Copenhagen"</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">labs</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">"City"</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+  <span class="n">xlab</span><span class="p">(</span><span class="s2">"Months"</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">ylab</span><span class="p">(</span><span class="s2">"Daylight (hours)"</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">geom_vline</span><span class="p">(</span><span class="n">xintercept</span> <span class="o">=</span> <span class="n">as.numeric</span><span class="p">(</span><span class="n">Sys.Date</span><span class="p">()),</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-06-daylight/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
 
 <p>Now lets calculate the daylight difference between the two cities.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> <span class="kp">date</span><span class="p">,</span> y <span class="o">=</span> cph <span class="o">-</span> mtl<span class="p">))</span> <span class="o">+</span>
-  geom_line<span class="p">()</span> <span class="o">+</span>
-  xlab<span class="p">(</span><span class="s">&quot;Months&quot;</span><span class="p">)</span> <span class="o">+</span>
-  ylab<span class="p">(</span><span class="s">&quot;Daylight difference&quot;</span><span class="p">)</span> <span class="o">+</span>
-  theme_bw<span class="p">()</span> <span class="o">+</span>
-  geom_vline<span class="p">(</span>xintercept <span class="o">=</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">Sys.Date</span><span class="p">()),</span> lty <span class="o">=</span> <span class="m">2</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cph</span> <span class="o">-</span> <span class="n">mtl</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">geom_line</span><span class="p">()</span> <span class="o">+</span>
+  <span class="n">xlab</span><span class="p">(</span><span class="s2">"Months"</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">ylab</span><span class="p">(</span><span class="s2">"Daylight difference"</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+  <span class="n">geom_vline</span><span class="p">(</span><span class="n">xintercept</span> <span class="o">=</span> <span class="n">as.numeric</span><span class="p">(</span><span class="n">Sys.Date</span><span class="p">()),</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-06-daylight/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
 
@@ -295,11 +311,38 @@ ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</s
 </footer>
 
 
+    <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
     
-
-
-
-
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
 
 
 
@@ -314,6 +357,7 @@ ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</s
 		ga('send', 'pageview');
 	</script>
 	<!-- End Google Analytics -->
+
     
 
   </body>

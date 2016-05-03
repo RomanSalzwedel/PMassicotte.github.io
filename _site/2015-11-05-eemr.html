@@ -14,16 +14,40 @@
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
 
+ <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+  
+  
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    
   
 
   
-
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
   
 
   
-
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
   
 
+  
+  
+
+  
+  
+
+  
   
 
   <!-- Facebook OpenGraph tags -->
@@ -37,14 +61,6 @@
   
   <meta property="og:image" content="http://PMassicotte.github.io/img/avatar-icon.png" />
   
-
-  <!-- IMPORTANT PLEASE READ THIS: Delete the below line if your blog already uses jQuery in some form. Otherwise a conflict might be created and your blog might not work properly. -->
-  <!-- Use the below line only if your blog doesn't already use jQuery. Please check your head.html and custom/head.html to be sure. -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <!-- Below lines are necessary for Google Feeds API to work properly. Add them to your head.html or custom/head.html files in the _includes directory of your Octopress blog's source folder -->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">google.load("feeds", "1");</script>
-
 
 </head>
 
@@ -116,41 +132,41 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	  <p>The <a href="https://github.com/PMassicotte/eemR"><code>eemR</code></a> package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the <code>eem_</code> prefix. Please note this is a very alpha version of the package for testing purpose only.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>eemR<span class="p">)</span>
-<span class="kp">ls</span><span class="p">(</span><span class="s">&quot;package:eemR&quot;</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">eemR</span><span class="p">)</span>
+<span class="n">ls</span><span class="p">(</span><span class="s2">"package:eemR"</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt;  [1] &quot;absorbance&quot;              &quot;eem_bind&quot;               
-#&gt;  [3] &quot;eem_biological_index&quot;    &quot;eem_coble_peaks&quot;        
-#&gt;  [5] &quot;eem_cut&quot;                 &quot;eem_export_matlab&quot;      
-#&gt;  [7] &quot;eem_extract&quot;             &quot;eem_fluorescence_index&quot; 
-#&gt;  [9] &quot;eem_humification_index&quot;  &quot;eem_inner_filter_effect&quot;
-#&gt; [11] &quot;eem_raman_normalisation&quot; &quot;eem_read&quot;               
-#&gt; [13] &quot;eem_remove_blank&quot;        &quot;eem_remove_scattering&quot;  
-#&gt; [15] &quot;eem_sample_names&quot;        &quot;eem_sample_names&lt;-&quot;     
-#&gt; [17] &quot;eem_set_wavelengths&quot;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt;  [1] "absorbance"              "eem_bind"               
+#&gt;  [3] "eem_biological_index"    "eem_coble_peaks"        
+#&gt;  [5] "eem_cut"                 "eem_export_matlab"      
+#&gt;  [7] "eem_extract"             "eem_fluorescence_index" 
+#&gt;  [9] "eem_humification_index"  "eem_inner_filter_effect"
+#&gt; [11] "eem_raman_normalisation" "eem_read"               
+#&gt; [13] "eem_remove_blank"        "eem_remove_scattering"  
+#&gt; [15] "eem_sample_names"        "eem_sample_names&lt;-"     
+#&gt; [17] "eem_set_wavelengths"</code></pre></figure>
 
 <p>The package can be installed using the following command.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;PMassicotte/eemR&quot;</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">devtools</span><span class="o">::</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"PMassicotte/eemR"</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="reading-excitation-emission">Reading excitation-emission</h2>
 
 <p>At the moment, to following EEM types are supported:</p>
 
 <ul>
-<li>Cary Eclipse <code>.csv</code> files</li>
-<li>Aqualog <code>.dat</code> files</li>
+  <li>Cary Eclipse <code>.csv</code> files</li>
+  <li>Aqualog <code>.dat</code> files</li>
 </ul>
 
 <p>EEM can be read using the <code>eem_read()</code> function. <em>Please fill an <a href="https://github.com/PMassicotte/eemR/issues">issue</a> if you have other file formats you would like to add to the package</em>.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>eemR<span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">eemR</span><span class="p">)</span>
 
-<span class="c1">## Reading a single eem</span>
-file <span class="o">&lt;-</span> <span class="kp">system.file</span><span class="p">(</span><span class="s">&quot;extdata/cary/eem&quot;</span><span class="p">,</span> <span class="s">&quot;sample1.csv&quot;</span><span class="p">,</span> package <span class="o">=</span> <span class="s">&quot;eemR&quot;</span><span class="p">)</span>
-eem <span class="o">&lt;-</span> eem_read<span class="p">(</span><span class="kp">file</span><span class="p">)</span>
+<span class="c1">## Reading a single eem
+</span><span class="n">file</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata/cary/eem"</span><span class="p">,</span> <span class="s2">"sample1.csv"</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s2">"eemR"</span><span class="p">)</span>
+<span class="n">eem</span> <span class="o">&lt;-</span> <span class="n">eem_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 
-plot<span class="p">(</span>eem<span class="p">)</span></code></pre></figure>
+<span class="n">plot</span><span class="p">(</span><span class="n">eem</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-05-eemR/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
 
@@ -159,18 +175,26 @@ plot<span class="p">(</span>eem<span class="p">)</span></code></pre></figure>
 <p>The current implemented metrics are:</p>
 
 <ol>
-<li><p>The fluorescence index (FI).</p></li>
-<li><p>The fluorescence peaks.</p></li>
-<li><p>The fluorescence humification index (HIX).</p></li>
-<li><p>The biological fluorescence index (BIX).</p></li>
+  <li>
+    <p>The fluorescence index (FI).</p>
+  </li>
+  <li>
+    <p>The fluorescence peaks.</p>
+  </li>
+  <li>
+    <p>The fluorescence humification index (HIX).</p>
+  </li>
+  <li>
+    <p>The biological fluorescence index (BIX).</p>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>eemR<span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">eemR</span><span class="p">)</span>
 
-folder <span class="o">&lt;-</span> <span class="kp">system.file</span><span class="p">(</span><span class="s">&quot;extdata/cary/eem&quot;</span><span class="p">,</span> package <span class="o">=</span> <span class="s">&quot;eemR&quot;</span><span class="p">)</span>
-eem <span class="o">&lt;-</span> eem_read<span class="p">(</span>folder<span class="p">)</span>
+<span class="n">folder</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata/cary/eem"</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s2">"eemR"</span><span class="p">)</span>
+<span class="n">eem</span> <span class="o">&lt;-</span> <span class="n">eem_read</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
 
-eem_fluorescence_index<span class="p">(</span>eem<span class="p">)</span></code></pre></figure>
+<span class="n">eem_fluorescence_index</span><span class="p">(</span><span class="n">eem</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Source: local data frame [3 x 2]
 #&gt; 
@@ -180,7 +204,7 @@ eem_fluorescence_index<span class="p">(</span>eem<span class="p">)</span></code>
 #&gt; 2 sample2 1.455333
 #&gt; 3 sample3 1.329413</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">eem_coble_peaks<span class="p">(</span>eem<span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">eem_coble_peaks</span><span class="p">(</span><span class="n">eem</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Source: local data frame [3 x 6]
 #&gt; 
@@ -190,7 +214,7 @@ eem_fluorescence_index<span class="p">(</span>eem<span class="p">)</span></code>
 #&gt; 2 sample2 1.262997 0.6647042 1.583489 1.023593 0.7709074
 #&gt; 3 sample3 1.474086 1.3162812 8.416034 6.063355 6.3179129</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">eem_humification_index<span class="p">(</span>eem<span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">eem_humification_index</span><span class="p">(</span><span class="n">eem</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Source: local data frame [3 x 2]
 #&gt; 
@@ -200,7 +224,7 @@ eem_fluorescence_index<span class="p">(</span>eem<span class="p">)</span></code>
 #&gt; 2 sample2  4.254848
 #&gt; 3 sample3 13.024623</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">eem_biological_index<span class="p">(</span>eem<span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">eem_biological_index</span><span class="p">(</span><span class="n">eem</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Source: local data frame [3 x 2]
 #&gt; 
@@ -215,24 +239,32 @@ eem_fluorescence_index<span class="p">(</span>eem<span class="p">)</span></code>
 <p>Three types of correction are currently supported:</p>
 
 <ol>
-<li><p><code>eem_remove_blank()</code> which subtract a water blank from the eem.</p></li>
-<li><p><code>eem_remove_scattering()</code> which remove both <em>Raman</em> and <em>Rayleigh</em> scattering.</p></li>
-<li><p><code>eem_raman_normalisation()</code> which normalize EEM fluoresence intensities.</p></li>
-<li><p><code>eem_inner_filter()</code> which correct for both primary and secondary inner-filter effect.</p></li>
+  <li>
+    <p><code>eem_remove_blank()</code> which subtract a water blank from the eem.</p>
+  </li>
+  <li>
+    <p><code>eem_remove_scattering()</code> which remove both <em>Raman</em> and <em>Rayleigh</em> scattering.</p>
+  </li>
+  <li>
+    <p><code>eem_raman_normalisation()</code> which normalize EEM fluoresence intensities.</p>
+  </li>
+  <li>
+    <p><code>eem_inner_filter()</code> which correct for both primary and secondary inner-filter effect.</p>
+  </li>
 </ol>
 
 <h2 id="removing-raman-and-rayleigh-scattering-1st-and-2nd-order">Removing Raman and Rayleigh scattering (1st and 2nd order)</h2>
 
 <p>The <code>eem_remove_scattering()</code> function removes both Raman and Rayleigh scattering from EEMs.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">file <span class="o">&lt;-</span> <span class="kp">system.file</span><span class="p">(</span><span class="s">&quot;extdata/cary/eem&quot;</span><span class="p">,</span> <span class="s">&quot;sample1.csv&quot;</span><span class="p">,</span> package <span class="o">=</span> <span class="s">&quot;eemR&quot;</span><span class="p">)</span>
-eem <span class="o">&lt;-</span> eem_read<span class="p">(</span><span class="kp">file</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">file</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata/cary/eem"</span><span class="p">,</span> <span class="s2">"sample1.csv"</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s2">"eemR"</span><span class="p">)</span>
+<span class="n">eem</span> <span class="o">&lt;-</span> <span class="n">eem_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 
-res <span class="o">&lt;-</span> eem_remove_scattering<span class="p">(</span>eem <span class="o">=</span> eem<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;raman&quot;</span><span class="p">,</span> order <span class="o">=</span> <span class="m">1</span><span class="p">,</span> width <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-res <span class="o">&lt;-</span> eem_remove_scattering<span class="p">(</span>eem <span class="o">=</span> res<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;rayleigh&quot;</span><span class="p">,</span> order <span class="o">=</span> <span class="m">1</span><span class="p">,</span> width <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">&lt;-</span> <span class="n">eem_remove_scattering</span><span class="p">(</span><span class="n">eem</span> <span class="o">=</span> <span class="n">eem</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">"raman"</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">&lt;-</span> <span class="n">eem_remove_scattering</span><span class="p">(</span><span class="n">eem</span> <span class="o">=</span> <span class="n">res</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">"rayleigh"</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
 
-plot<span class="p">(</span>eem<span class="p">)</span>
-plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
+<span class="n">plot</span><span class="p">(</span><span class="n">eem</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-05-eemR/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="300cm" height="250cm" style="display: block; margin: auto;" /><img src="/assets/Rfig/2015-11-05-eemR/unnamed-chunk-4-2.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="300cm" height="250cm" style="display: block; margin: auto;" /></p>
 
@@ -240,12 +272,12 @@ plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
 
 <p>The <code>eem_remove_blank()</code> function subtract blank (miliq) water from eem. Scatter bands can often be reduced by subtracting water blank.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">file <span class="o">&lt;-</span> <span class="kp">system.file</span><span class="p">(</span><span class="s">&quot;extdata/cary&quot;</span><span class="p">,</span> <span class="s">&quot;nano.csv&quot;</span><span class="p">,</span> package <span class="o">=</span> <span class="s">&quot;eemR&quot;</span><span class="p">)</span>
-blank <span class="o">&lt;-</span> eem_read<span class="p">(</span><span class="kp">file</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">file</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata/cary"</span><span class="p">,</span> <span class="s2">"nano.csv"</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s2">"eemR"</span><span class="p">)</span>
+<span class="n">blank</span> <span class="o">&lt;-</span> <span class="n">eem_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 
-res <span class="o">&lt;-</span> eem_remove_blank<span class="p">(</span>res<span class="p">,</span> blank<span class="p">)</span>
+<span class="n">res</span> <span class="o">&lt;-</span> <span class="n">eem_remove_blank</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">blank</span><span class="p">)</span>
 
-plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
+<span class="n">plot</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-05-eemR/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
 
@@ -253,11 +285,11 @@ plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
 
 <p>The <code>eem_raman_normalisation()</code> function implement a simple calibration method for fluorescence intensity using only the integrated area of a water Raman peak.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">res <span class="o">&lt;-</span> eem_raman_normalisation<span class="p">(</span>res<span class="p">,</span> blank<span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">res</span> <span class="o">&lt;-</span> <span class="n">eem_raman_normalisation</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">blank</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Raman area: 9.501974</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-05-eemR/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
 
@@ -265,14 +297,14 @@ plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
 
 <p>To account for reabsorption of the light emitted by fluorophores in the water, absorbance spectra are used for correction of both primary and secondary inner filtering effects in the EEMs.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">data<span class="p">(</span><span class="s">&quot;absorbance&quot;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="s2">"absorbance"</span><span class="p">)</span>
 
-res <span class="o">&lt;-</span> eem_inner_filter_effect<span class="p">(</span>res<span class="p">,</span> absorbance<span class="p">,</span> <span class="m">1</span><span class="p">)</span></code></pre></figure>
+<span class="n">res</span> <span class="o">&lt;-</span> <span class="n">eem_inner_filter_effect</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">absorbance</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Range of IFE correction factors: 0.6433 0.989 
 #&gt; Range of total absorbance (Atotal) : 0.0096 0.3832</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span>res<span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="/assets/Rfig/2015-11-05-eemR/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
 
@@ -280,16 +312,19 @@ res <span class="o">&lt;-</span> eem_inner_filter_effect<span class="p">(</span>
 
 <p>PARAFAC analysis was made easy with the fantastic Matlab <a href="http://www.models.life.ku.dk/drEEM"><code>drEEM</code></a> toolbox. The function <code>eem_export_matlab()</code> can be  used to export the EEMs into a <code>m-file</code> directly usable in Matlab by the <code>drEEM</code> toolbox.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r">folder <span class="o">&lt;-</span> <span class="kp">system.file</span><span class="p">(</span><span class="s">&quot;extdata/cary/eem&quot;</span><span class="p">,</span> package <span class="o">=</span> <span class="s">&quot;eemR&quot;</span><span class="p">)</span>
-eem <span class="o">&lt;-</span> eem_read<span class="p">(</span>folder<span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">folder</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata/cary/eem"</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s2">"eemR"</span><span class="p">)</span>
+<span class="n">eem</span> <span class="o">&lt;-</span> <span class="n">eem_read</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
 
-filename <span class="o">&lt;-</span> <span class="kp">paste</span><span class="p">(</span><span class="kp">tempfile</span><span class="p">(),</span> <span class="s">&quot;.mat&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">&lt;-</span> <span class="n">paste</span><span class="p">(</span><span class="n">tempfile</span><span class="p">(),</span> <span class="s2">".mat"</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">""</span><span class="p">)</span>
 
-eem_export_matlab<span class="p">(</span>filename<span class="p">,</span> eem<span class="p">)</span></code></pre></figure>
+<span class="n">eem_export_matlab</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">eem</span><span class="p">)</span></code></pre></figure>
 
 <p>Note that the name of the structure generated by the function will be <code>OriginalData</code> to <em>complement</em> with PARAFAC standard. Then, the importation into Matlab is made easy using the <code>load()</code> function.</p>
-<div class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">load</span><span class="p">(</span><span class="s">&#39;FileName.mat&#39;</span><span class="p">);</span>
-</code></pre></div>
+
+<p><code>matlab
+load('FileName.mat');
+</code></p>
+
 	</div>
   </div>
 </article>
@@ -422,11 +457,38 @@ eem_export_matlab<span class="p">(</span>filename<span class="p">,</span> eem<sp
 </footer>
 
 
+    <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
     
-
-
-
-
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
 
 
 
@@ -441,6 +503,7 @@ eem_export_matlab<span class="p">(</span>filename<span class="p">,</span> eem<sp
 		ga('send', 'pageview');
 	</script>
 	<!-- End Google Analytics -->
+
     
 
   </body>
