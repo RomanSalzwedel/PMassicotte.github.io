@@ -4,10 +4,19 @@ layout: post
 output: github_document
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+Long time now see and this won't be a long post.
+
+Recently I have been more interested to perform web scraping to extract public data to perform data analysis. There are probably many R packages out there that do a good job at such task, but I found out that the [rvest](https://cran.r-project.org/web/packages/rvest/index.html) was among the most popular ones. Hence I decided to give it a try.
+
+In this post, I'm using the `rvest` library to visualize how many medals were obtained by each country during the summer Olympics 2016.
+
+## Extracting data from web
+
+First, let's extract medals count information from the web Here we are going to use the
 
 ```{r, message=FALSE}
 # devtools::install_github("baptiste/ggflags")
@@ -16,7 +25,6 @@ library(rvest)
 library(dplyr)
 library(ggplot2)
 library(ggflags)
-library(extrafont)
 library(tidyr)
 
 # Use nbc website
