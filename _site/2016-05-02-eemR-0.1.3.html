@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Another R blog</title>
+  <title>eemR 0.1.3 is now on CRAN</title>
 
   <meta name="author" content="Philippe Massicotte" />
 
   
-  <meta name="description" content="Because we need more R blogs">
+  <meta name="description" content="With Shiny visualization!">
   
 
   <link rel="alternate" type="application/rss+xml" title="Another R blog - Because we need more R blogs" href="/feed.xml" />
@@ -19,12 +19,13 @@
  <!-- everything has to be repeated twice because on 2016-02-01 GitHub pages migrated to jekyll 3; see bug https://github.com/jekyll/jekyll/issues/4439 -->
 
   
+  
     
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     
   
-  
 
+  
   
     
       <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -32,15 +33,14 @@
       <link rel="stylesheet" href="/css/main.css" />
     
   
-  
 
+  
   
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
     
-  
   
 
   
@@ -53,11 +53,11 @@
   
 
   <!-- Facebook OpenGraph tags -->
-  <meta property="og:title" content="Another R blog" />
+  <meta property="og:title" content="eemR 0.1.3 is now on CRAN" />
   <meta property="og:type" content="website" />
 
   
-  <meta property="og:url" content="http://PMassicotte.github.io/page2/" />
+  <meta property="og:url" content="http://PMassicotte.github.io/2016-05-02-eemR-0.1.3/" />
   
 
   
@@ -117,78 +117,107 @@
 </nav>  
 
     <div role="main" class="container main-content">
-      
-<header class="header-page">
+      <header class="header-post">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-	  <div class="page-heading">
-	    <h1>Another R blog</h1>
-	    
-	    <hr class="small">
-	    <span class="page-subheading">Because we need more R blogs</span>
-	    
-	  </div>
-    </div>
+      <div class="post-heading">
+        <h1>eemR 0.1.3 is now on CRAN</h1>
+        
+        <h2 class="post-subheading">With Shiny visualization!</h2>
+        
+        <span class="post-meta">Posted on May 2, 2016</span>
+      </div>
+     </div>
   </div>
 </header>
 
+<article>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	  <p><a href="https://cran.r-project.org/web/packages/eemR/index.html">eemR</a> has been updated to v0.1.3 and brings a lot of new features. Among the most interesting ones:</p>
+
+<ul>
+  <li>
+    <p>Shiny support: You can interactively visualize EEMS by using <code class="highlighter-rouge">interactive = TRUE</code>. Ex.: <code class="highlighter-rouge">plot(X, interactive = TRUE)</code>.</p>
+  </li>
+  <li>
+    <p><a href="https://cran.r-project.org/web/packages/eemR/vignettes/introduction.html">A vignette has been added</a>.</p>
+  </li>
+  <li>
+    <ul>
+      <li><code class="highlighter-rouge">eem_remove_blank()</code> and <code class="highlighter-rouge">eem_raman_normalisation()</code> can now try to implicitly use a blank eem from a <code class="highlighter-rouge">eemlist</code> object (#20). If blank is omitted (<code class="highlighter-rouge">blank = NA</code>), the functions will try to extract the blank from the <code class="highlighter-rouge">eemlist</code> object. This is done by looking for sample names containing one of these complete or partial strings (ignoring case):
+        <ul>
+          <li>“nano”</li>
+          <li>“miliq”</li>
+          <li>“milliq”</li>
+          <li>“mq”</li>
+          <li>“blank”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">eemR</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+
+<span class="n">folder</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"inst/extdata/cary/"</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s2">"eemR"</span><span class="p">)</span>
+
+<span class="n">eems</span> <span class="o">&lt;-</span> <span class="n">eem_read</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">recursive</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="n">eem_raman_normalisation</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="n">eem_remove_scattering</span><span class="p">(</span><span class="n">type</span> <span class="o">=</span> <span class="s2">"raman"</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="n">eem_remove_scattering</span><span class="p">(</span><span class="n">type</span> <span class="o">=</span> <span class="s2">"rayleigh"</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&gt; Raman area: 9.501974 
+#&gt; Raman area: 9.501974 
+#&gt; Raman area: 9.501974 
+#&gt; Raman area: 10.8374</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">eems</span><span class="p">,</span> <span class="n">which</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="/assets/Rfig/2016-05-02-eemR-0.1.3/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+	</div>
+  </div>
+</article>
 
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <div class="posts-list">
-  
-  <article class="post-preview">
-    <a href="/2015-11-06-daylight">
-	  <h2 class="post-title">Calculating daylight in R</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on November 6, 2015
-    </p>
-
-    <div class="post-entry">
-      A little bit more than a year ago I moved in Denmark. So far, the last year has been quite fun and I have been working on interesting projects. The most difficult part has been the winter since the daylight is very short between November and February. I was curious...
-	  <a href="/2015-11-06-daylight" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-
-   </article>
-  
-  <article class="post-preview">
-    <a href="/2015-11-05-eemR">
-	  <h2 class="post-title">Introducing eemR</h2>
-
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on November 5, 2015
-    </p>
-
-    <div class="post-entry">
-      The eemR package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the eem_ prefix. Please note this is a very alpha version of the package for testing purpose...
-	  <a href="/2015-11-05-eemR" class="post-read-more">[Read&nbsp;More]</a>
-    </div>
-
-   </article>
-  
-</div>
-
-
-<ul class="pager main-pager">
-  
-  <li class="previous">
-    <a href="/">&larr; Newer Posts</a>
-  </li>
-  
-  
-</ul>
-
-
-	
+    <ul class="pager blog-pager">
+      
+      <li class="previous">
+        <a href="/2016-03-07-not_in" data-toggle="tooltip" data-placement="top" title="Quick tip">&larr; Previous Post</a>
+      </li>
+      
+      
+    </ul>
   </div>
 </div>
+
+
+<div class="row disqus-comments">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	    var disqus_shortname = 'pmassicotte';
+	    // ensure that pages with query string get the same discussion
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];	    
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+  </div>
+</div>
+
 
     </div>
 
@@ -292,7 +321,6 @@
 
 
 
-
   
     <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
     
@@ -313,6 +341,7 @@
 	<script src="/js/main.js"></script>
     
   
+
 
 
 

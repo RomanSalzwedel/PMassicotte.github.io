@@ -1,0 +1,69 @@
+---
+title: "Visualizating olympics medals in R"
+layout: post
+output: github_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+# devtools::install_github("baptiste/ggflags")
+
+library(rvest)
+library(dplyr)
+library(ggplot2)
+library(ggflags)
+library(extrafont)
+library(tidyr)
+
+# Use nbc website
+url1 <- "http://www.nbcolympics.com/medals"
+
+medals <- read_html(url1) %>%
+  html_nodes("table") %>%
+  .[[1]] %>%
+  html_table() %>%
+  mutate(code = countrycode::countrycode(Country, "country.name", "iso2c")) %>%
+  mutate(code = tolower(code)) %>%
+  gather(medal_color, count, Gold, Silver, Bronze) %>%
+  mutate(medal_color = factor(medal_color, levels = c("Gold", "Silver", "Bronze"))) %>%
+  rename(country = Country) %>%
+  drop_na(country, code) %>%
+  mutate(rank = rank(-Total))
+
+```
+
+## The plot
+
+```{r, fig.width = 8, fig.height = 10}
+
+medals %>%
+  filter(Total >= 10) %>%
+  ggplot(aes(x = reorder(country, Total), y = count)) +
+  geom_bar(stat = "identity", aes(fill = medal_color)) +
+  geom_flag(y = -7, aes(country = code), size = 10) +
+  theme(axis.text.x = element_text(
+    angle = 90,
+    hjust = 1,
+    size = 7,
+    vjust = 0.5
+  )) +
+  scale_fill_manual(values = c(
+    "Gold" = "gold",
+    "Bronze" = "#cd7f32",
+    "Silver" = "#C0C0C0"
+  )) +
+  scale_y_continuous(expand = c(0.1, 1)) +
+  xlab("Country") +
+  ylab("Total number of medals") +
+  theme_bw() +
+  theme(legend.justification = c(1, 0),
+        legend.position = c(1, 0)) +
+  theme(legend.title = element_blank()) +
+  theme(axis.title.x = element_blank()) +
+  coord_flip()
+
+```
