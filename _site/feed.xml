@@ -3,8 +3,30 @@
   <channel>
     <title>Another R blog</title>
     <description>Because we need more R blogs</description>
-    <link>http://PMassicotte.github.io</link>
-    <atom:link href="http://PMassicotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Installing latest version of RStudio from R</title>
+        <description>
+          
+          If you are like me, chances are that you update RStudio on a daily basis. Here is a small R script that automatically download and install the latest version of RStudio on your computer. Note this is for ubuntu64 based systems, but this can be easily modified for Windows or...
+        </description>
+        <pubDate>Fri, 18 Nov 2016 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2016-11-18-updating-rstudio/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-11-18-updating-rstudio/</guid>
+      </item>
+    
+      <item>
+        <title>Visualizating olympics medals in R</title>
+        <description>
+          
+          Recently I have been more interested to perform web scraping to extract public data to perform data analysis. There are probably many R packages out there that do a good job at such task, but I found out that the rvest was among the most popular ones. Hence I decided...
+        </description>
+        <pubDate>Thu, 25 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016-08-25-olympics2016/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-08-25-olympics2016/</guid>
+      </item>
     
       <item>
         <title>eemR 0.1.3 is now on CRAN</title>
@@ -13,8 +35,8 @@
           eemR has been updated to v0.1.3 and brings a lot of new features. Among the most interesting ones: Shiny support: You can interactively visualize EEMS by using interactive = TRUE. Ex.: plot(X, interactive = TRUE). A vignette has been added. eem_remove_blank() and eem_raman_normalisation() can now try to implicitly use a...
         </description>
         <pubDate>Mon, 02 May 2016 00:00:00 -0700</pubDate>
-        <link>http://PMassicotte.github.io/2016-05-02-eemR-0.1.3</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2016-05-02-eemR-0.1.3</guid>
+        <link>http://localhost:4000/2016-05-02-eemR-0.1.3/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-05-02-eemR-0.1.3/</guid>
       </item>
     
       <item>
@@ -24,26 +46,8 @@
           It is easy to verify if elements are within a list using the %in% operator in R. For example: c(&quot;a&quot;, &quot;b&quot;) %in% letters[1:5] #&amp;gt; [1] TRUE TRUE However, I am often in a situation where I need to do the opposite. This can be easily achieved using the Negate() function....
         </description>
         <pubDate>Mon, 07 Mar 2016 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2016-03-07-not_in</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2016-03-07-not_in</guid>
-      </item>
-    
-      <item>
-        <title>gtrendsR 1.3.1</title>
-        <description>
-          gtrendsR 1.3.1 is now on CRAN - 
-          grtendsR 1.3.1 is now on CRAN fixing many bugs.
-
-
-  Fixing issue #34 where connection verification was not done properly.
-  Now able to use more latin character in query. For example: gtrends(&quot;montréal&quot;).
-  Can now deal with data returned other than in English language.
-
-
-        </description>
-        <pubDate>Sun, 13 Dec 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-12-13-gtrendsR</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-12-13-gtrendsR</guid>
+        <link>http://localhost:4000/2016-03-07-not_in/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-03-07-not_in/</guid>
       </item>
     
       <item>
@@ -53,8 +57,8 @@
           Introduction gtrendsR provides an interface for retrieving and displaying the information returned online by Google Trends. Trends (number of hits) over the time as well as geographic representation of the results can be displayed. The package can be installed using the following command: devtools::install_github(&quot;PMassicotte/gtrendsR&quot;) There are two main functions in...
         </description>
         <pubDate>Tue, 17 Nov 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-11-17-gtrendsR</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-17-gtrendsR</guid>
+        <link>http://localhost:4000/2015-11-17-gtrendsR/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015-11-17-gtrendsR/</guid>
       </item>
     
       <item>
@@ -64,8 +68,8 @@
           Sometimes when you open a data file (lets say a .csv), variables will be recognized as factor whereas it should be numeric. It is therefore tempting to simply convert the variable to numeric using as.numeric(). Big mistake! If you use directly as.numeric() on a variable of the type factor, R...
         </description>
         <pubDate>Fri, 13 Nov 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-11-13-r-101</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-13-r-101</guid>
+        <link>http://localhost:4000/2015-11-13-r-101/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015-11-13-r-101/</guid>
       </item>
     
       <item>
@@ -75,8 +79,8 @@
           A little bit more than a year ago I moved in Denmark. So far, the last year has been quite fun and I have been working on interesting projects. The most difficult part has been the winter since the daylight is very short between November and February. I was curious...
         </description>
         <pubDate>Fri, 06 Nov 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-11-06-daylight</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-06-daylight</guid>
+        <link>http://localhost:4000/2015-11-06-daylight/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015-11-06-daylight/</guid>
       </item>
     
       <item>
@@ -86,8 +90,8 @@
           The eemR package implements various functions used calculate metrics from excitation-emission matrix (EEM) as well as to preform pre-processing corrections before PARAFAC analysis. All functions from this package start with the eem_ prefix. Please note this is a very alpha version of the package for testing purpose only. library(eemR) ls(&quot;package:eemR&quot;)...
         </description>
         <pubDate>Thu, 05 Nov 2015 00:00:00 -0800</pubDate>
-        <link>http://PMassicotte.github.io/2015-11-05-eemR</link>
-        <guid isPermaLink="true">http://PMassicotte.github.io/2015-11-05-eemR</guid>
+        <link>http://localhost:4000/2015-11-05-eemR/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015-11-05-eemR/</guid>
       </item>
     
   </channel>
