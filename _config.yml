@@ -32,31 +32,31 @@ navbar-links:
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+# avatar: "/img/avatar-icon.png"
 
 # --- Footer options --- #
 
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Philippe Massicotte
-  email: "pmassicotte@hotmail.com"
+  name: Roman Salzwedel
+  email: "roman.salzwedel@hu-berlin.de"
   500px: persican  # eg. daattali
-  github: PMassicotte    # eg. daattali
-  twitter: philmassicotte   # eg. daattali
-  stackoverflow: "users/5558188/philippe-massicotte"
+  github: RomanSalzwedel    # eg. daattali
+  # twitter: philmassicotte   # eg. daattali
+  # stackoverflow: "users/5558188/philippe-massicotte"
 
 # Select which links to show in the footer
 footer-links-active:
   rss: true
   500px: true
   email: true
-  twitter: true
+  twitter: false
   google-plus: false
   github: true
   reddit: false
   linkedin: false
-  stackoverflow: true
+  stackoverflow: false
   xing: false
   stackoverflow: false
   snapchat: false
@@ -73,14 +73,14 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "http://pmassicotte.github.io/"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "http://romansalzwedel.github.io/"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "pmassicotte"
+# disqus: "pmassicotte"
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-69738368-1"
+# google_analytics: "UA-69738368-1"
 
 # Facebook App ID
 # fb_app_id: ""
