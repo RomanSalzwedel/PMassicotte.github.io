@@ -1,10 +1,10 @@
 ---
 layout: page
 title: About me
-subtitle: Philippe Massicotte
+subtitle: Roman Salzwedel
 ---
 
-As a *numerical ecologsist*, the [R statistical computing language](https://www.r-project.org/) is an important part of my daily work flow. I mainly use R for environmental modeling and data manipulation. In this not-so-serious blog I will present my recent R work as well as basic tips and tricks about R.
+I am a *political science* student at Humboldt-University Berlin. The [R statistical computing language](https://www.r-project.org/) is an important part of my daily work flow. I mainly use R for data manipulation and statistical models. In the future, I hope to present my recent R work on this website.
 
 The unifying theme of my research is oriented toward better understanding how surrounding landscapes of aquatic ecosystems determine the biogeocycling of **dissolved organic matter** (DOM). DOM is one of the main agents driving optical properties of aquatic ecosystems and subsequently their functioning. Most of the projects that I led have involved the use of [absorption](https://en.wikipedia.org/wiki/Absorption_spectroscopy) and [fluorescence](https://en.wikipedia.org/wiki/Fluorescence_spectroscopy) spectroscopy to better understand the biogeocycling of DOM.
 
